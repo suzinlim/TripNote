@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9kV-tg-sPr">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--마이페이지-->
+        <scene sceneID="cMW-US-LOP">
+            <objects>
+                <viewController id="E2Z-Is-YAT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GXx-c2-r4l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZNE-Y1-I5S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="person" catalog="system" selectedImage="person.fill" id="0Du-Fa-QDP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3Z-O7-KyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="1384"/>
+        </scene>
+        <!--나의 여행-->
+        <scene sceneID="9uV-GT-JYx">
+            <objects>
+                <viewController id="ewK-p2-ona" customClass="MainViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VF3-nK-8Js">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계획한 여행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpU-9X-fn2">
+                                <rect key="frame" x="30" y="139" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="콩이님의 여행 노트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-MG-Owg">
+                                <rect key="frame" x="30" y="89" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZBU-iA-dif">
+                                <rect key="frame" x="10" y="170" width="373" height="589"/>
+                                <color key="backgroundColor" red="1" green="0.92247141629999996" blue="0.9295600463" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C17-D0-xmR">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdA-gL-hfC">
+                                <rect key="frame" x="127" y="701" width="145" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="여행 추가하기" imagePadding="5"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nJP-5o-D2X"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vKm-MG-Owg" firstAttribute="leading" secondItem="nJP-5o-D2X" secondAttribute="leading" constant="30" id="0T2-Af-cgE"/>
+                            <constraint firstItem="ZBU-iA-dif" firstAttribute="top" secondItem="jpU-9X-fn2" secondAttribute="bottom" constant="10" id="LW1-20-4Kd"/>
+                            <constraint firstItem="jpU-9X-fn2" firstAttribute="top" secondItem="vKm-MG-Owg" secondAttribute="bottom" constant="20" id="TdC-r4-wlz"/>
+                            <constraint firstItem="nJP-5o-D2X" firstAttribute="trailing" secondItem="ZBU-iA-dif" secondAttribute="trailing" constant="10" id="bxH-cw-PFJ"/>
+                            <constraint firstItem="nJP-5o-D2X" firstAttribute="bottom" secondItem="ZBU-iA-dif" secondAttribute="bottom" constant="10" id="d26-gX-4JD"/>
+                            <constraint firstItem="vKm-MG-Owg" firstAttribute="top" secondItem="nJP-5o-D2X" secondAttribute="top" constant="30" id="dC2-GN-j2u"/>
+                            <constraint firstItem="ZBU-iA-dif" firstAttribute="leading" secondItem="nJP-5o-D2X" secondAttribute="leading" constant="10" id="dcj-dj-xKt"/>
+                            <constraint firstItem="jpU-9X-fn2" firstAttribute="leading" secondItem="nJP-5o-D2X" secondAttribute="leading" constant="30" id="whd-ir-a7K"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="나의 여행" image="airplane.circle" catalog="system" selectedImage="airplane.circle.fill" id="2Zg-I8-STp"/>
+                    <connections>
+                        <outlet property="tripCollectionView" destination="ZBU-iA-dif" id="6Gj-HE-dEu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KdD-WS-Dud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631.2977099236641" y="1383.8028169014085"/>
+        </scene>
+        <!--여행 기록-->
+        <scene sceneID="HfK-l1-EsY">
+            <objects>
+                <viewController id="ehl-lg-MpK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dxm-XK-HSk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Na1-F6-6i8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="여행 기록" image="book.pages" catalog="system" selectedImage="book.pages.fill" id="oMc-g4-e75"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tb-zt-bYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-895" y="1384"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0y6-FF-lVA">
+            <objects>
+                <tabBarController id="9kV-tg-sPr" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fpn-Pt-GuV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ewK-p2-ona" kind="relationship" relationship="viewControllers" id="O5O-Q1-n0d"/>
+                        <segue destination="ehl-lg-MpK" kind="relationship" relationship="viewControllers" id="wMM-Em-aQW"/>
+                        <segue destination="E2Z-Is-YAT" kind="relationship" relationship="viewControllers" id="eIQ-Au-Qfs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsD-Jx-ERV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-894" y="643"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="airplane.circle" catalog="system" width="128" height="123"/>
+        <image name="airplane.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="book.pages" catalog="system" width="107" height="128"/>
+        <image name="book.pages.fill" catalog="system" width="107" height="128"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
