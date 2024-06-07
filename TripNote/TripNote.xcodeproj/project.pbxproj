@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08113E2C130A4200F6EEFF /* UILabel+Extension.swift */; };
 		0A37583B2C10BB9E002808A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37583A2C10BB9E002808A0 /* AppDelegate.swift */; };
 		0A37583D2C10BB9E002808A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37583C2C10BB9E002808A0 /* SceneDelegate.swift */; };
 		0A3758422C10BB9E002808A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0A3758412C10BB9E002808A0 /* Base */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A08113E2C130A4200F6EEFF /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		0A3758372C10BB9E002808A0 /* TripNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A37583A2C10BB9E002808A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A37583C2C10BB9E002808A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A08113D2C130A0500F6EEFF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0A08113E2C130A4200F6EEFF /* UILabel+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0A37582E2C10BB9E002808A0 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		0A3758392C10BB9E002808A0 /* TripNote */ = {
 			isa = PBXGroup;
 			children = (
+				0A08113D2C130A0500F6EEFF /* Extension */,
 				0A37587E2C10CF30002808A0 /* Cell */,
 				0A37583A2C10BB9E002808A0 /* AppDelegate.swift */,
 				0A37583C2C10BB9E002808A0 /* SceneDelegate.swift */,
@@ -275,6 +286,7 @@
 			files = (
 				0A37583B2C10BB9E002808A0 /* AppDelegate.swift in Sources */,
 				0A3758822C10CF41002808A0 /* TripCollectionViewCell.swift in Sources */,
+				0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */,
 				0A37583D2C10BB9E002808A0 /* SceneDelegate.swift in Sources */,
 				0A3758792C10CD0A002808A0 /* MainViewController.swift in Sources */,
 			);

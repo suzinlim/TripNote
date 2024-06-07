@@ -16,41 +16,58 @@
                 <rect key="frame" x="0.0" y="0.0" width="266" height="368"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D-14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drD-3G-Ibb">
-                        <rect key="frame" x="20" y="20" width="38" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M6y-GA-QQb">
+                        <rect key="frame" x="0.0" y="0.0" width="266" height="368"/>
+                        <color key="backgroundColor" red="0.76942896839999997" green="0.28284000380000002" blue="0.65100810730000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-14" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drD-3G-Ibb">
+                        <rect key="frame" x="19.999999999999996" y="25" width="37.666666666666657" height="20.333333333333329"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="대학 친구들과 여행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grb-Ez-z3X">
-                        <rect key="frame" x="20" y="58" width="127" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대학 친구들과 여행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grb-Ez-z3X">
+                        <rect key="frame" x="20" y="60.333333333333343" width="177" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGQ-Sb-Qtw">
-                        <rect key="frame" x="213" y="5" width="48" height="38"/>
+                        <rect key="frame" x="218" y="5" width="48" height="38"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="more"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2024.06.06 ~ 2024.06.10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-ce-cqT">
-                        <rect key="frame" x="98" y="340" width="154" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6월 29일 ~ 6월 31일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-ce-cqT">
+                        <rect key="frame" x="94.333333333333329" y="322.66666666666669" width="146.66666666666669" height="20.333333333333314"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" red="0.77458852199999995" green="0.89794679219999995" blue="0.90997503219999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="WGQ-Sb-Qtw" secondAttribute="trailing" constant="5" id="PJr-3W-uy4"/>
+                <constraint firstItem="M6y-GA-QQb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4XZ-af-Vc3"/>
+                <constraint firstAttribute="trailing" secondItem="M6y-GA-QQb" secondAttribute="trailing" id="CGQ-q0-bj1"/>
+                <constraint firstAttribute="bottom" secondItem="M6y-GA-QQb" secondAttribute="bottom" id="MRT-3E-CYq"/>
+                <constraint firstAttribute="trailing" secondItem="WGQ-Sb-Qtw" secondAttribute="trailing" id="PJr-3W-uy4"/>
+                <constraint firstAttribute="trailing" secondItem="bcf-ce-cqT" secondAttribute="trailing" constant="25" id="PX1-cb-IYP"/>
+                <constraint firstItem="M6y-GA-QQb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Qrq-1F-HmD"/>
+                <constraint firstItem="grb-Ez-z3X" firstAttribute="top" secondItem="drD-3G-Ibb" secondAttribute="bottom" constant="15" id="WIO-GU-Ws1"/>
+                <constraint firstItem="drD-3G-Ibb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XGb-mk-d0B"/>
                 <constraint firstItem="WGQ-Sb-Qtw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="jmR-xx-zym"/>
+                <constraint firstItem="drD-3G-Ibb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="o06-vz-V1U"/>
+                <constraint firstAttribute="bottom" secondItem="bcf-ce-cqT" secondAttribute="bottom" constant="25" id="pFQ-7B-I2l"/>
+                <constraint firstItem="grb-Ez-z3X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="zlX-ny-2mf"/>
             </constraints>
             <size key="customSize" width="266" height="368"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="M6y-GA-QQb" id="oWJ-HH-OX7"/>
+                <outlet property="d_dayLabel" destination="drD-3G-Ibb" id="5pD-Ls-Eaq"/>
+                <outlet property="dateLabel" destination="bcf-ce-cqT" id="W8U-h6-eY4"/>
+                <outlet property="tripLabel" destination="grb-Ez-z3X" id="05a-xJ-XXV"/>
+            </connections>
             <point key="canvasLocation" x="259.5419847328244" y="131.69014084507043"/>
         </collectionViewCell>
     </objects>
