@@ -61,6 +61,7 @@ extension TripNoteViewController: UITableViewDataSource {
     // 각 행에 대한 셀을 반환하는 메서드
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TripItemTableViewCell.cellIdentifier, for: indexPath) as! TripItemTableViewCell
+        cell.selectionStyle = .none
 
         return cell
     }

@@ -23,6 +23,9 @@
 		0A4E57522C15B70200D24D7E /* TripItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E57502C15B70200D24D7E /* TripItemTableViewCell.swift */; };
 		0A4E57532C15B70200D24D7E /* TripItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E57512C15B70200D24D7E /* TripItemTableViewCell.xib */; };
 		0A4E57552C15CF6A00D24D7E /* TripHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E57542C15CF6A00D24D7E /* TripHeaderView.swift */; };
+		0A4E57642C15E65400D24D7E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E57632C15E65400D24D7E /* DiaryViewController.swift */; };
+		0A4E576B2C15EA9F00D24D7E /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E57692C15EA9F00D24D7E /* DiaryTableViewCell.swift */; };
+		0A4E576C2C15EA9F00D24D7E /* DiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E576A2C15EA9F00D24D7E /* DiaryTableViewCell.xib */; };
 		0A65C72E2C14BCE500FFB48E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 0A65C72D2C14BCE500FFB48E /* Then */; };
 		0A65C7312C14BCF300FFB48E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A65C7302C14BCF300FFB48E /* SnapKit */; };
 		0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */; };
@@ -68,6 +71,9 @@
 		0A4E57502C15B70200D24D7E /* TripItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripItemTableViewCell.swift; sourceTree = "<group>"; };
 		0A4E57512C15B70200D24D7E /* TripItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripItemTableViewCell.xib; sourceTree = "<group>"; };
 		0A4E57542C15CF6A00D24D7E /* TripHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHeaderView.swift; sourceTree = "<group>"; };
+		0A4E57632C15E65400D24D7E /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		0A4E57692C15EA9F00D24D7E /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		0A4E576A2C15EA9F00D24D7E /* DiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryTableViewCell.xib; sourceTree = "<group>"; };
 		0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripTitleViewController.swift; sourceTree = "<group>"; };
 		0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripDateViewController.swift; sourceTree = "<group>"; };
 		0A8897632C1465CB0057EA0F /* SetTripAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripAreaViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			children = (
 				0A0811462C130E7A00F6EEFF /* Main */,
 				0A0811452C130E7100F6EEFF /* Trip */,
+				0A4E575B2C15DD7C00D24D7E /* Diary */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -205,6 +212,24 @@
 			children = (
 				0A37587F2C10CF41002808A0 /* TripCollectionViewCell.swift */,
 				0A3758802C10CF41002808A0 /* TripCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0A4E575B2C15DD7C00D24D7E /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				0A4E575E2C15DDCE00D24D7E /* Cell */,
+				0A4E57632C15E65400D24D7E /* DiaryViewController.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		0A4E575E2C15DDCE00D24D7E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0A4E57692C15EA9F00D24D7E /* DiaryTableViewCell.swift */,
+				0A4E576A2C15EA9F00D24D7E /* DiaryTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -326,6 +351,7 @@
 				0A4E57532C15B70200D24D7E /* TripItemTableViewCell.xib in Resources */,
 				0A3758472C10BB9F002808A0 /* Base in Resources */,
 				0A3758422C10BB9E002808A0 /* Base in Resources */,
+				0A4E576C2C15EA9F00D24D7E /* DiaryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */,
+				0A4E576B2C15EA9F00D24D7E /* DiaryTableViewCell.swift in Sources */,
 				0A4E57522C15B70200D24D7E /* TripItemTableViewCell.swift in Sources */,
 				0A37583B2C10BB9E002808A0 /* AppDelegate.swift in Sources */,
 				0A4E57552C15CF6A00D24D7E /* TripHeaderView.swift in Sources */,
@@ -358,6 +385,7 @@
 				0A4E574B2C15AE7900D24D7E /* TripNoteViewController.swift in Sources */,
 				0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */,
 				0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */,
+				0A4E57642C15E65400D24D7E /* DiaryViewController.swift in Sources */,
 				0A8897642C1465CB0057EA0F /* SetTripAreaViewController.swift in Sources */,
 				0A37583D2C10BB9E002808A0 /* SceneDelegate.swift in Sources */,
 				0A3758792C10CD0A002808A0 /* MainViewController.swift in Sources */,

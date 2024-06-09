@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="209" id="KGk-i7-Jjw" customClass="DiaryTableViewCell" customModule="TripNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="544" height="209"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="544" height="209"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fk-k7-gfu">
+                        <rect key="frame" x="25" y="100" width="494" height="81.333333333333314"/>
+                        <string key="text">제주도 흑돼지 맛집을 찾아갔다. 역시나 너무나 맛있었다. 근데 오늘 비가 너무 많이 와서 너무 추웠다. 다음에 또 먹을래. 먹고 나니 또 배가 고파졌다. 금강산도 식후경. 회를 먹으러 갔다. 그러고 나서 분좋카로 갔다. 분위기 좋은 카페 ㅋ 하 배고프다.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFT-tT-FAz">
+                        <rect key="frame" x="464" y="25" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="IUV-jf-VqG"/>
+                            <constraint firstAttribute="height" constant="55" id="fT2-Uh-gVs"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24. 06. 09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sor-Fn-q9Q">
+                        <rect key="frame" x="25" y="24.999999999999996" width="133" height="33.666666666666657"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WFT-tT-FAz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="0q5-O9-HRE"/>
+                    <constraint firstAttribute="trailing" secondItem="WFT-tT-FAz" secondAttribute="trailing" constant="25" id="BPS-gy-ULM"/>
+                    <constraint firstItem="sor-Fn-q9Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="Dee-F6-LgK"/>
+                    <constraint firstItem="2fk-k7-gfu" firstAttribute="top" secondItem="WFT-tT-FAz" secondAttribute="bottom" constant="20" id="eDC-t6-lOp"/>
+                    <constraint firstItem="sor-Fn-q9Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="wW3-go-s7Y"/>
+                    <constraint firstItem="2fk-k7-gfu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="x6P-4d-1xk"/>
+                    <constraint firstAttribute="trailing" secondItem="2fk-k7-gfu" secondAttribute="trailing" constant="25" id="xU3-RO-10g"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="245.80152671755724" y="89.08450704225352"/>
+        </tableViewCell>
+    </objects>
+</document>

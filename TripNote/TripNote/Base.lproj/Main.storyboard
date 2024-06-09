@@ -3,6 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -240,14 +242,49 @@
         <!--여행 기록-->
         <scene sceneID="HfK-l1-EsY">
             <objects>
-                <viewController id="ehl-lg-MpK" sceneMemberID="viewController">
+                <viewController id="ehl-lg-MpK" customClass="DiaryViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dxm-XK-HSk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TIk-PT-1wr">
+                                <rect key="frame" x="0.0" y="110" width="393" height="659"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-iK-fnw">
+                                <rect key="frame" x="20" y="76" width="39" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="gE1-1I-PEZ">
+                                <rect key="frame" x="270" y="690" width="103" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                <state key="normal" title="글쓰기">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="medium"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Na1-F6-6i8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Na1-F6-6i8" firstAttribute="trailing" secondItem="TIk-PT-1wr" secondAttribute="trailing" id="0C6-6K-Ce7"/>
+                            <constraint firstItem="eH9-iK-fnw" firstAttribute="top" secondItem="Na1-F6-6i8" secondAttribute="top" constant="17" id="5Gi-bq-50u"/>
+                            <constraint firstItem="TIk-PT-1wr" firstAttribute="leading" secondItem="Na1-F6-6i8" secondAttribute="leading" id="Hii-iB-JTM"/>
+                            <constraint firstItem="Na1-F6-6i8" firstAttribute="bottom" secondItem="TIk-PT-1wr" secondAttribute="bottom" id="SNW-YK-PAN"/>
+                            <constraint firstItem="eH9-iK-fnw" firstAttribute="leading" secondItem="Na1-F6-6i8" secondAttribute="leading" constant="20" id="TtF-Ci-zSh"/>
+                            <constraint firstItem="TIk-PT-1wr" firstAttribute="top" secondItem="eH9-iK-fnw" secondAttribute="bottom" constant="7" id="xsE-rB-OO6"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="여행 기록" image="book.pages" catalog="system" selectedImage="book.pages.fill" id="oMc-g4-e75"/>
+                    <connections>
+                        <outlet property="diaryButton" destination="gE1-1I-PEZ" id="bSg-sz-guL"/>
+                        <outlet property="diaryTableView" destination="TIk-PT-1wr" id="xne-ib-fc9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tb-zt-bYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -518,11 +555,17 @@
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="mainColor">
+            <color red="0.35294117647058826" green="0.50196078431372548" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
