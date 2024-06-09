@@ -43,7 +43,7 @@ class SetTripDateViewController: UIViewController {
         endDatePicker.minimumDate = startDatePicker.date
         
         // 다음으로 버튼
-        nextButton.isUserInteractionEnabled = false
+//        nextButton.isUserInteractionEnabled = false
         nextButton.layer.cornerRadius = 10
     }
     

@@ -25,7 +25,7 @@ class SetTripAreaViewController: UIViewController {
         areaTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
         // 다음으로 버튼
-        nextButton.isUserInteractionEnabled = false
+//        nextButton.isUserInteractionEnabled = false
         nextButton.layer.cornerRadius = 10
     }
     
@@ -46,5 +46,7 @@ class SetTripAreaViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        guard let tripNoteVC = self.storyboard?.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController else { return }
+        self.navigationController?.pushViewController(tripNoteVC, animated: true)
     }
 }

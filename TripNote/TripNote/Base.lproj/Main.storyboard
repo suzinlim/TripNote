@@ -460,6 +460,36 @@
             </objects>
             <point key="canvasLocation" x="-1631" y="2751"/>
         </scene>
+        <!--Trip Note View Controller-->
+        <scene sceneID="xAX-FU-af4">
+            <objects>
+                <viewController storyboardIdentifier="tripNoteViewController" id="NXG-g1-NyE" customClass="TripNoteViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yb7-YZ-10Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f6n-16-hJG">
+                                <rect key="frame" x="20" y="59" width="353" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZN6-Ql-k9R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZN6-Ql-k9R" firstAttribute="bottom" secondItem="f6n-16-hJG" secondAttribute="bottom" id="Ipa-sR-d9g"/>
+                            <constraint firstItem="f6n-16-hJG" firstAttribute="top" secondItem="ZN6-Ql-k9R" secondAttribute="top" id="KNa-vM-7aS"/>
+                            <constraint firstItem="f6n-16-hJG" firstAttribute="leading" secondItem="ZN6-Ql-k9R" secondAttribute="leading" constant="20" id="MPA-rN-z4g"/>
+                            <constraint firstItem="ZN6-Ql-k9R" firstAttribute="trailing" secondItem="f6n-16-hJG" secondAttribute="trailing" constant="20" id="R35-BS-EEI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="f6n-16-hJG" id="MYi-p3-Wvd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LuT-z1-09m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825.19083969465646" y="2750"/>
+        </scene>
         <!--나의 여행-->
         <scene sceneID="rWG-NR-Evq">
             <objects>

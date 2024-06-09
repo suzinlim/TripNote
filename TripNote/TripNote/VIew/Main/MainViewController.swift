@@ -48,7 +48,8 @@ class MainViewController: UIViewController {
     }
     
     private func registerCollectionViewCell() {
-        tripCollectionView.register(UINib(nibName: "TripCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tripCollectionViewCell")
+        let tripNib = UINib(nibName: "TripCollectionViewCell", bundle: nil)
+        tripCollectionView.register(tripNib, forCellWithReuseIdentifier: TripCollectionViewCell.cellIdentifier)
     }
     
     @IBAction func addTripButtonTapped(_ sender: UIButton) {
@@ -65,7 +66,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tripCollectionViewCell", for: indexPath) as! TripCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripCollectionViewCell.cellIdentifier, for: indexPath) as! TripCollectionViewCell
         
         return cell
     }

@@ -28,8 +28,12 @@ class SetTripTitleViewController: UIViewController {
         titleTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
         // 다음으로 버튼
-        nextButton.isUserInteractionEnabled = false
+//        nextButton.isUserInteractionEnabled = false
         nextButton.layer.cornerRadius = 10
+    }
+    
+    @objc func backButtonTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
     private func setExampleButtons() {
@@ -37,10 +41,6 @@ class SetTripTitleViewController: UIViewController {
             button.layer.cornerRadius = 9
             button.addTarget(self, action: #selector(exampleButtonTapped), for: .touchUpInside)
         }
-    }
-    
-    @objc func backButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
     }
     
     @objc func textFieldDidChange(_ sender: UITextField) {

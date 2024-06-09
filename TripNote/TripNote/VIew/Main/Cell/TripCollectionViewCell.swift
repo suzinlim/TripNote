@@ -8,7 +8,7 @@
 import UIKit
 
 final class TripCollectionViewCell: UICollectionViewCell {
-    static let id = "TripCollectionViewCell"
+    static let cellIdentifier = "TripCollectionViewCell"
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var d_dayLabel: UILabel!
