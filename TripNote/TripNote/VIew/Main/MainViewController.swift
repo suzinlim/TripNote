@@ -51,8 +51,10 @@ class MainViewController: UIViewController {
         tripCollectionView.register(UINib(nibName: "TripCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tripCollectionViewCell")
     }
     
-    @IBAction func addTripButtonTapped(_ sender: Any) {
+    @IBAction func addTripButtonTapped(_ sender: UIButton) {
         print("여행 추가하기 버튼")
+        guard let setTripTitleVC = self.storyboard?.instantiateViewController(withIdentifier: "setTripTitleViewController") as? SetTripTitleViewController else { return }
+        self.navigationController?.pushViewController(setTripTitleVC, animated: true)
     }
     
 }
