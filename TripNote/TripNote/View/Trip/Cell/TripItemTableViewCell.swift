@@ -14,17 +14,23 @@ class TripItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureView()
+        setConfigure()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    private func configureView() {
+    private func setConfigure() {
+        // 셀 스타일
+        selectionStyle = .none
+        
         // 숫자 Label
         numberLabel.layer.cornerRadius = 10
         numberLabel.clipsToBounds = true
     }
     
+    func configure(at indexPath: IndexPath) {
+        numberLabel.text = String(indexPath.row + 1)
+    }
 }

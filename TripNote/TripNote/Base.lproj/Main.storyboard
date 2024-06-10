@@ -17,8 +17,77 @@
                     <view key="view" contentMode="scaleToFill" id="GXx-c2-r4l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tE3-Tr-V0n">
+                                <rect key="frame" x="146.66666666666666" y="100" width="100" height="98.666666666666686"/>
+                                <color key="tintColor" red="0.87169231550000004" green="0.86961046829999999" blue="0.87576941289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5EC-Ps-W55"/>
+                                    <constraint firstAttribute="width" constant="100" id="VF2-sh-tuc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="콩이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xv-I1-vRL">
+                                <rect key="frame" x="179.33333333333334" y="209" width="34.666666666666657" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="merong@aaa.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5Q-OR-z0A">
+                                <rect key="frame" x="127.66666666666669" y="238" width="138" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원정보를 삭제하시겠어요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUX-Wm-iWy">
+                                <rect key="frame" x="35" y="469.33333333333331" width="168" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-JN-wOF">
+                                <rect key="frame" x="25" y="307.33333333333331" width="107" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="서비스 소개">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3j-bz-WXw">
+                                <rect key="frame" x="288" y="462.33333333333331" width="80" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="회원 탈퇴">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                    <color key="baseForegroundColor" systemColor="systemGrayColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcP-ai-P8M">
+                                <rect key="frame" x="25" y="378.33333333333331" width="87" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZNE-Y1-I5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yUX-Wm-iWy" firstAttribute="top" secondItem="YcP-ai-P8M" secondAttribute="bottom" constant="55" id="3C7-xM-1Vs"/>
+                            <constraint firstItem="kGD-JN-wOF" firstAttribute="leading" secondItem="ZNE-Y1-I5S" secondAttribute="leading" constant="25" id="3qG-4s-HIL"/>
+                            <constraint firstItem="kGD-JN-wOF" firstAttribute="top" secondItem="B5Q-OR-z0A" secondAttribute="bottom" constant="50" id="CzF-xx-fkL"/>
+                            <constraint firstItem="B5Q-OR-z0A" firstAttribute="top" secondItem="5xv-I1-vRL" secondAttribute="bottom" constant="5" id="I0e-DH-gHT"/>
+                            <constraint firstItem="tE3-Tr-V0n" firstAttribute="centerX" secondItem="GXx-c2-r4l" secondAttribute="centerX" id="Kak-Ux-9Dh"/>
+                            <constraint firstItem="5xv-I1-vRL" firstAttribute="top" secondItem="tE3-Tr-V0n" secondAttribute="bottom" constant="10" id="Ldu-RN-FF3"/>
+                            <constraint firstItem="tE3-Tr-V0n" firstAttribute="top" secondItem="ZNE-Y1-I5S" secondAttribute="top" constant="40" id="NQa-JX-7gH"/>
+                            <constraint firstItem="yUX-Wm-iWy" firstAttribute="leading" secondItem="ZNE-Y1-I5S" secondAttribute="leading" constant="35" id="TjI-da-ZuV"/>
+                            <constraint firstItem="5xv-I1-vRL" firstAttribute="centerX" secondItem="GXx-c2-r4l" secondAttribute="centerX" id="TxB-l5-rOI"/>
+                            <constraint firstItem="E3j-bz-WXw" firstAttribute="centerY" secondItem="yUX-Wm-iWy" secondAttribute="centerY" id="Ubd-O3-XEm"/>
+                            <constraint firstItem="ZNE-Y1-I5S" firstAttribute="trailing" secondItem="E3j-bz-WXw" secondAttribute="trailing" constant="25" id="Ys2-yy-VNg"/>
+                            <constraint firstItem="B5Q-OR-z0A" firstAttribute="centerX" secondItem="GXx-c2-r4l" secondAttribute="centerX" id="mMG-o8-3el"/>
+                            <constraint firstItem="E3j-bz-WXw" firstAttribute="leading" secondItem="yUX-Wm-iWy" secondAttribute="trailing" constant="85" id="sL7-4f-GOf"/>
+                            <constraint firstItem="YcP-ai-P8M" firstAttribute="leading" secondItem="ZNE-Y1-I5S" secondAttribute="leading" constant="25" id="uVW-eC-2q3"/>
+                            <constraint firstItem="YcP-ai-P8M" firstAttribute="top" secondItem="kGD-JN-wOF" secondAttribute="bottom" constant="35" id="vdN-Qv-p4c"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="마이페이지" image="person" catalog="system" selectedImage="person.fill" id="0Du-Fa-QDP"/>
                 </viewController>
@@ -553,22 +622,23 @@
         <image name="book.pages" catalog="system" width="107" height="128"/>
         <image name="book.pages.fill" catalog="system" width="107" height="128"/>
         <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="mainColor">
             <color red="0.35294117647058826" green="0.50196078431372548" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
