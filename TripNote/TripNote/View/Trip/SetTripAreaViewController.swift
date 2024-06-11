@@ -46,7 +46,8 @@ class SetTripAreaViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        guard let tripNoteVC = self.storyboard?.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController else { return }
-        self.navigationController?.pushViewController(tripNoteVC, animated: true)
+        let bottomSheetViewController = BottomSheetViewController()
+        bottomSheetViewController.modalPresentationStyle = .custom
+        self.present(bottomSheetViewController, animated: false, completion: nil)
     }
 }

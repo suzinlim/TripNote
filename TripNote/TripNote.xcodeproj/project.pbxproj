@@ -30,6 +30,8 @@
 		0A4E576F2C15F1C200D24D7E /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E576E2C15F1C200D24D7E /* MyPageViewController.swift */; };
 		0A5E45FA2C18B70000EF8767 /* NotEnteredTripItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E45F92C18B70000EF8767 /* NotEnteredTripItemTableViewCell.xib */; };
 		0A5E45FB2C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E45F82C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift */; };
+		0A5E45FD2C18BBF600EF8767 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */; };
+		0A5E45FF2C18BD1800EF8767 /* DimmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E45FE2C18BD1800EF8767 /* DimmedViewController.swift */; };
 		0A65C72E2C14BCE500FFB48E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 0A65C72D2C14BCE500FFB48E /* Then */; };
 		0A65C7312C14BCF300FFB48E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A65C7302C14BCF300FFB48E /* SnapKit */; };
 		0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */; };
@@ -82,6 +84,8 @@
 		0A4E576E2C15F1C200D24D7E /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		0A5E45F82C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEnteredTripItemTableViewCell.swift; sourceTree = "<group>"; };
 		0A5E45F92C18B70000EF8767 /* NotEnteredTripItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotEnteredTripItemTableViewCell.xib; sourceTree = "<group>"; };
+		0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		0A5E45FE2C18BD1800EF8767 /* DimmedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmedViewController.swift; sourceTree = "<group>"; };
 		0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripTitleViewController.swift; sourceTree = "<group>"; };
 		0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripDateViewController.swift; sourceTree = "<group>"; };
 		0A8897632C1465CB0057EA0F /* SetTripAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripAreaViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				0A8897632C1465CB0057EA0F /* SetTripAreaViewController.swift */,
 				0A4E574A2C15AE7900D24D7E /* TripNoteViewController.swift */,
 				0A4E57542C15CF6A00D24D7E /* TripHeaderView.swift */,
+				0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */,
+				0A5E45FE2C18BD1800EF8767 /* DimmedViewController.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -413,10 +419,12 @@
 				0A3758822C10CF41002808A0 /* TripCollectionViewCell.swift in Sources */,
 				0A4E574B2C15AE7900D24D7E /* TripNoteViewController.swift in Sources */,
 				0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */,
+				0A5E45FF2C18BD1800EF8767 /* DimmedViewController.swift in Sources */,
 				0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */,
 				0A5E45FB2C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift in Sources */,
 				0A4E576F2C15F1C200D24D7E /* MyPageViewController.swift in Sources */,
 				0A4E57642C15E65400D24D7E /* DiaryViewController.swift in Sources */,
+				0A5E45FD2C18BBF600EF8767 /* BottomSheetViewController.swift in Sources */,
 				0A8897642C1465CB0057EA0F /* SetTripAreaViewController.swift in Sources */,
 				0A37583D2C10BB9E002808A0 /* SceneDelegate.swift in Sources */,
 				0A28A5182C175A6A00E62668 /* AddDiaryViewController.swift in Sources */,
