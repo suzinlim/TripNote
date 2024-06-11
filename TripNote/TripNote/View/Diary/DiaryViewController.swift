@@ -38,6 +38,12 @@ class DiaryViewController: UIViewController {
         diaryButton.layer.shadowRadius = 4
         diaryButton.layer.masksToBounds = false
     }
+    
+    @IBAction func diaryButtonTapped(_ sender: UIButton) {
+        guard let addDiaryVC = self.storyboard?.instantiateViewController(withIdentifier: "addDiaryViewController") as? AddDiaryViewController else { return }
+        addDiaryVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(addDiaryVC, animated: true)
+    }
 }
 
 extension DiaryViewController: UITableViewDelegate {

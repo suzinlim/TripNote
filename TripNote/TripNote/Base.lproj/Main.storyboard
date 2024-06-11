@@ -33,19 +33,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="merong@aaa.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5Q-OR-z0A">
-                                <rect key="frame" x="127.66666666666669" y="238" width="138" height="19.333333333333314"/>
+                                <rect key="frame" x="127.66666666666669" y="238" width="138" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원정보를 삭제하시겠어요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUX-Wm-iWy">
-                                <rect key="frame" x="35" y="469.33333333333331" width="168" height="18"/>
+                                <rect key="frame" x="35" y="470.33333333333331" width="168" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGD-JN-wOF">
-                                <rect key="frame" x="25" y="307.33333333333331" width="107" height="36"/>
+                                <rect key="frame" x="25" y="308.33333333333331" width="107" height="36"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="서비스 소개">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
@@ -53,7 +53,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3j-bz-WXw">
-                                <rect key="frame" x="288" y="462.33333333333331" width="80" height="32"/>
+                                <rect key="frame" x="288" y="463.33333333333331" width="80" height="32"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원 탈퇴">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
@@ -61,7 +61,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcP-ai-P8M">
-                                <rect key="frame" x="25" y="378.33333333333331" width="87" height="36"/>
+                                <rect key="frame" x="25" y="379.33333333333331" width="87" height="36"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그아웃">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="18"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3Z-O7-KyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802.29007633587787" y="1383.8028169014085"/>
+            <point key="canvasLocation" x="1793" y="1384"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="9uV-GT-JYx">
@@ -308,20 +308,20 @@
             </objects>
             <point key="canvasLocation" x="-3117" y="2771"/>
         </scene>
-        <!--여행 기록-->
+        <!--Diary View Controller-->
         <scene sceneID="HfK-l1-EsY">
             <objects>
-                <viewController id="ehl-lg-MpK" customClass="DiaryViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="diaryViewController" id="ehl-lg-MpK" customClass="DiaryViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dxm-XK-HSk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TIk-PT-1wr">
-                                <rect key="frame" x="0.0" y="110" width="393" height="659"/>
+                                <rect key="frame" x="0.0" y="154" width="393" height="615"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-iK-fnw">
-                                <rect key="frame" x="20" y="76" width="39" height="27"/>
+                                <rect key="frame" x="20" y="120" width="39" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -336,6 +336,9 @@
                                 <state key="normal" title="글쓰기">
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="medium"/>
                                 </state>
+                                <connections>
+                                    <action selector="diaryButtonTapped:" destination="ehl-lg-MpK" eventType="touchUpInside" id="vcG-Ni-Yub"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Na1-F6-6i8"/>
@@ -349,7 +352,7 @@
                             <constraint firstItem="TIk-PT-1wr" firstAttribute="top" secondItem="eH9-iK-fnw" secondAttribute="bottom" constant="7" id="xsE-rB-OO6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="여행 기록" image="book.pages" catalog="system" selectedImage="book.pages.fill" id="oMc-g4-e75"/>
+                    <navigationItem key="navigationItem" id="gUs-WZ-kse"/>
                     <connections>
                         <outlet property="diaryButton" destination="gE1-1I-PEZ" id="bSg-sz-guL"/>
                         <outlet property="diaryTableView" destination="TIk-PT-1wr" id="xne-ib-fc9"/>
@@ -357,7 +360,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tb-zt-bYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.297709923664122" y="1383.8028169014085"/>
+            <point key="canvasLocation" x="30" y="2086"/>
+        </scene>
+        <!--Add Diary View Controller-->
+        <scene sceneID="IGU-Td-ee4">
+            <objects>
+                <viewController storyboardIdentifier="addDiaryViewController" id="GNn-9T-dfg" customClass="AddDiaryViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q1c-2u-e9B">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UGH-Nf-qDM">
+                                <rect key="frame" x="303" y="79" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="XNX-kj-mZ0"/>
+                                    <constraint firstAttribute="width" constant="70" id="c2f-yV-i0a"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="여행은 즐거워 룰루랄라 다이어트 해야돼" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fSm-cg-8dc">
+                                <rect key="frame" x="30" y="176" width="333" height="536"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duN-H6-7wO">
+                                <rect key="frame" x="0.0" y="792" width="393" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="zTT-xc-a1q">
+                                        <rect key="frame" x="35" y="10" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="OQd-uX-js0"/>
+                                            <constraint firstAttribute="height" constant="26" id="ioA-Yo-gKe"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zTT-xc-a1q" firstAttribute="leading" secondItem="duN-H6-7wO" secondAttribute="leading" constant="35" id="Rmc-UR-HgX"/>
+                                    <constraint firstItem="zTT-xc-a1q" firstAttribute="top" secondItem="duN-H6-7wO" secondAttribute="top" constant="10" id="Si2-SZ-7Ek"/>
+                                    <constraint firstAttribute="height" constant="60" id="wV5-sj-E3m"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024. 06. 11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN0-QG-dUJ">
+                                <rect key="frame" x="30" y="129" width="103" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Wm-qM-xdM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="duN-H6-7wO" firstAttribute="top" secondItem="fSm-cg-8dc" secondAttribute="bottom" constant="80" id="2Y8-wW-d1f"/>
+                            <constraint firstItem="UGH-Nf-qDM" firstAttribute="leading" secondItem="AN0-QG-dUJ" secondAttribute="trailing" constant="170" id="9r4-ax-9Qd"/>
+                            <constraint firstItem="duN-H6-7wO" firstAttribute="trailing" secondItem="0Wm-qM-xdM" secondAttribute="trailing" id="Aay-gG-zXq"/>
+                            <constraint firstAttribute="bottom" secondItem="duN-H6-7wO" secondAttribute="bottom" id="ChF-dw-ZK6"/>
+                            <constraint firstItem="AN0-QG-dUJ" firstAttribute="leading" secondItem="0Wm-qM-xdM" secondAttribute="leading" constant="30" id="TTe-N6-7R5"/>
+                            <constraint firstItem="0Wm-qM-xdM" firstAttribute="trailing" secondItem="fSm-cg-8dc" secondAttribute="trailing" constant="30" id="Xby-qF-jLb"/>
+                            <constraint firstItem="AN0-QG-dUJ" firstAttribute="top" secondItem="0Wm-qM-xdM" secondAttribute="top" constant="70" id="auO-tB-zbw"/>
+                            <constraint firstItem="0Wm-qM-xdM" firstAttribute="trailing" secondItem="UGH-Nf-qDM" secondAttribute="trailing" constant="20" id="u6p-s9-WIT"/>
+                            <constraint firstItem="UGH-Nf-qDM" firstAttribute="top" secondItem="0Wm-qM-xdM" secondAttribute="top" constant="20" id="wKn-GN-TmI"/>
+                            <constraint firstItem="duN-H6-7wO" firstAttribute="leading" secondItem="0Wm-qM-xdM" secondAttribute="leading" id="wtK-Y8-yx8"/>
+                            <constraint firstItem="fSm-cg-8dc" firstAttribute="top" secondItem="AN0-QG-dUJ" secondAttribute="bottom" constant="25" id="z4z-Yq-ncs"/>
+                            <constraint firstItem="fSm-cg-8dc" firstAttribute="leading" secondItem="0Wm-qM-xdM" secondAttribute="leading" constant="30" id="zPC-cS-pVI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="diaryTextView" destination="fSm-cg-8dc" id="WHe-M1-ZYX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8D-Pf-LHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31" y="2770"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0y6-FF-lVA">
@@ -371,13 +446,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="eMb-kp-GUE" kind="relationship" relationship="viewControllers" id="O5O-Q1-n0d"/>
-                        <segue destination="ehl-lg-MpK" kind="relationship" relationship="viewControllers" id="wMM-Em-aQW"/>
+                        <segue destination="203-WH-c0Q" kind="relationship" relationship="viewControllers" id="wMM-Em-aQW"/>
                         <segue destination="E2Z-Is-YAT" kind="relationship" relationship="viewControllers" id="eIQ-Au-Qfs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsD-Jx-ERV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894" y="643"/>
+            <point key="canvasLocation" x="31" y="644"/>
         </scene>
         <!--Set Trip Date View Controller-->
         <scene sceneID="puJ-Xl-Ekb">
@@ -615,12 +690,32 @@
             </objects>
             <point key="canvasLocation" x="-1631.2977099236641" y="1383.8028169014085"/>
         </scene>
+        <!--여행 기록-->
+        <scene sceneID="DCC-NZ-qnY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="203-WH-c0Q" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="여행 기록" image="book.pages" catalog="system" selectedImage="book.pages.fill" id="oMc-g4-e75"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6It-OZ-pPg">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ehl-lg-MpK" kind="relationship" relationship="rootViewController" id="aTE-7s-19P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAZ-W1-oKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.297709923664122" y="1383.8028169014085"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane.circle" catalog="system" width="128" height="123"/>
         <image name="airplane.circle.fill" catalog="system" width="128" height="123"/>
         <image name="book.pages" catalog="system" width="107" height="128"/>
         <image name="book.pages.fill" catalog="system" width="107" height="128"/>
+        <image name="camera" width="30" height="30"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
@@ -628,6 +723,9 @@
         <namedColor name="mainColor">
             <color red="0.35294117647058826" green="0.50196078431372548" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

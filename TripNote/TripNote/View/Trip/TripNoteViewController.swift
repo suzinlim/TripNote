@@ -35,7 +35,9 @@ class TripNoteViewController: UIViewController {
     
     private func registerTableViewCell() {
         let itemNib = UINib(nibName: "TripItemTableViewCell", bundle: nil)
+        let notEntereditemNib = UINib(nibName: "NotEnteredTripItemTableViewCell", bundle: nil)
         tableView.register(itemNib, forCellReuseIdentifier: TripItemTableViewCell.cellIdentifier)
+        tableView.register(notEntereditemNib, forCellReuseIdentifier: NotEnteredTripItemTableViewCell.cellIdentifier)
     }
     
     @objc func backButtonTapped(_ sender: UIButton) {
@@ -59,8 +61,9 @@ extension TripNoteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TripItemTableViewCell.cellIdentifier, for: indexPath) as! TripItemTableViewCell
-        cell.configure(at: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: TripItemTableViewCell.cellIdentifier, for: indexPath) as! TripItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NotEnteredTripItemTableViewCell.cellIdentifier, for: indexPath) as! NotEnteredTripItemTableViewCell
+//        cell.configure(at: indexPath)
 
         return cell
     }

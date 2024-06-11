@@ -14,6 +14,19 @@ final class TripCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var d_dayLabel: UILabel!
     @IBOutlet weak var tripLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
+    
+    // -TODO: 더보기 메뉴 항목별 액션 추가
+    lazy var menuItems: [UIAction] = {
+        return [
+            UIAction(title: "수정하기", image: UIImage(systemName: "square.and.pencil"), handler: { _ in }),
+            UIAction(title: "삭제하기", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { _ in }),
+        ]
+    }()
+    
+    lazy var menu: UIMenu = {
+        return UIMenu(title: "", options: [], children: menuItems)
+    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +44,8 @@ final class TripCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 4
         self.layer.masksToBounds = false
+        
+        moreButton.menu = menu
     }
     
     private func configureComponents() {
@@ -42,5 +57,9 @@ final class TripCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
       super.prepareForReuse()
+    }
+    
+    @IBAction func moreButtonTapped(_ sender: UIButton) {
+        sender.showsMenuAsPrimaryAction = true
     }
 }
