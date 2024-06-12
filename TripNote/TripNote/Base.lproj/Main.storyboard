@@ -581,10 +581,10 @@
             </objects>
             <point key="canvasLocation" x="-2376.3358778625952" y="2750"/>
         </scene>
-        <!--Set Trip Area View Controller-->
+        <!--Set Trip Location View Controller-->
         <scene sceneID="VYW-dJ-sPq">
             <objects>
-                <viewController storyboardIdentifier="setTripAreaViewController" hidesBottomBarWhenPushed="YES" id="7Zq-tQ-Gw9" customClass="SetTripAreaViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setTripLocationViewController" hidesBottomBarWhenPushed="YES" id="7Zq-tQ-Gw9" customClass="SetTripLocationViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bQ9-3M-KdX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -607,7 +607,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="nextButtonTapped:" destination="7Zq-tQ-Gw9" eventType="touchUpInside" id="RW9-dK-REq"/>
+                                    <action selector="nextButtonTapped:" destination="7Zq-tQ-Gw9" eventType="touchUpInside" id="yIn-RA-xx9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="지역을 검색해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nyH-am-b5m">
@@ -633,8 +633,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="areaTextField" destination="nyH-am-b5m" id="rpv-J0-UHj"/>
-                        <outlet property="nextButton" destination="QTM-CE-Nef" id="vCC-go-E68"/>
+                        <outlet property="locationTextField" destination="nyH-am-b5m" id="b8M-hs-O6n"/>
+                        <outlet property="nextButton" destination="QTM-CE-Nef" id="Adj-NA-zrv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ztT-3n-Z1j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -664,12 +664,27 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="f6n-16-hJG" id="MYi-p3-Wvd"/>
+                        <outlet property="tableView" destination="f6n-16-hJG" id="mwz-os-IL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LuT-z1-09m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-825.19083969465646" y="2750"/>
+        </scene>
+        <!--Bottom Sheet View Controller-->
+        <scene sceneID="k0O-4n-ONO">
+            <objects>
+                <viewController id="LHl-En-LLR" customClass="BottomSheetViewController" customModule="TripNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LaX-sN-07B">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="O7H-YN-HLy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJR-6R-QGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631" y="3437"/>
         </scene>
         <!--나의 여행-->
         <scene sceneID="rWG-NR-Evq">

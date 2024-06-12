@@ -57,8 +57,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dateLabel" destination="QWq-zv-rwX" id="qeB-pP-a3r"/>
-                <outlet property="dayLabel" destination="L4H-i8-1Du" id="6eY-Ia-ouw"/>
+                <outlet property="dateLabel" destination="QWq-zv-rwX" id="XfT-nz-czy"/>
+                <outlet property="dayLabel" destination="0gk-iB-19n" id="790-Zc-ZH9"/>
             </connections>
             <point key="canvasLocation" x="109.16030534351144" y="58.450704225352112"/>
         </tableViewCell>

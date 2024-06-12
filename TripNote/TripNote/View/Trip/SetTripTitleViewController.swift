@@ -62,6 +62,11 @@ class SetTripTitleViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        // 데이터 저장
+        if let title = titleTextField.text, !title.isEmpty {
+            TripDataManager.shared.setTripTitle(title)
+        }
+        
         guard let setTripDateVC = self.storyboard?.instantiateViewController(withIdentifier: "setTripDateViewController") as? SetTripDateViewController else { return }
         self.navigationController?.pushViewController(setTripDateVC, animated: true)
     }

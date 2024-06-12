@@ -57,13 +57,13 @@ extension TripNoteViewController: UITableViewDataSource {
     
     // 각 섹션의 행 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: TripItemTableViewCell.cellIdentifier, for: indexPath) as! TripItemTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: NotEnteredTripItemTableViewCell.cellIdentifier, for: indexPath) as! NotEnteredTripItemTableViewCell
-//        cell.configure(at: indexPath)
+        cell.configure(at: indexPath)
 
         return cell
     }

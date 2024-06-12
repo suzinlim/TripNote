@@ -28,7 +28,25 @@
 		<key>TripNote.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0A3758362C10BB9E002808A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A37584C2C10BB9F002808A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A3758562C10BB9F002808A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

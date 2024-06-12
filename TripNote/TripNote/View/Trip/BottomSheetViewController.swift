@@ -12,6 +12,9 @@ import Then
 class BottomSheetViewController: UIViewController {
     
     weak var currentViewController: UIViewController?
+    var selectedIndexPath: IndexPath?
+    var selectedColor: UIColor?
+    
     let colors: [UIColor] = [
         UIColor(named: "Color1")!,
         UIColor(named: "Color2")!,
@@ -36,7 +39,7 @@ class BottomSheetViewController: UIViewController {
     }
     
     lazy var titleLabel = UILabel().then {
-        $0.text = "여행 커버 이미지"
+        $0.text = "여행 커버 색상"
         $0.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
     }
     
@@ -55,13 +58,14 @@ class BottomSheetViewController: UIViewController {
         return collectionView
     }()
     
-    lazy var nextButton = UIButton().then {
+    lazy var addTripButton = UIButton().then {
         $0.setTitle("여행 추가하기", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.backgroundColor = UIColor.opaqueSeparator
         $0.layer.cornerRadius = 10
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        $0.isUserInteractionEnabled = false
+        $0.addTarget(self, action: #selector(addTripButtonTapped), for: .touchUpInside)
     }
     
     let totalHeight: CGFloat = 844 // 전체 높이
@@ -106,7 +110,7 @@ class BottomSheetViewController: UIViewController {
         [titleLabel,
          titleDetailLabel,
          colorCollectionView,
-         nextButton].forEach { bottomSheetView.addSubview($0) }
+         addTripButton].forEach { bottomSheetView.addSubview($0) }
     }
     
     private func setupLayout() {
@@ -141,10 +145,10 @@ class BottomSheetViewController: UIViewController {
             $0.height.equalTo(50)
         }
         
-        // 다음으로 Button
-        nextButton.snp.makeConstraints {
-            $0.height.equalTo(52)
-            $0.leading.trailing.equalToSuperview().inset(24)
+        // 여행 추가하기 Button
+        addTripButton.snp.makeConstraints {
+            $0.height.equalTo(55)
+            $0.leading.trailing.equalToSuperview().inset(30)
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
@@ -176,9 +180,34 @@ class BottomSheetViewController: UIViewController {
         }
     }
     
-    @objc func nextButtonTapped() {
-        guard let tripNoteVC = self.storyboard?.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController else { return }
-        self.navigationController?.pushViewController(tripNoteVC, animated: true)
+    @objc func addTripButtonTapped() {
+        // 데이터 저장
+        guard let color = selectedColor else { return }
+        TripDataManager.shared.setTripColor(color)
+        
+        print("선택된 항목 확인")
+        print(TripDataManager.shared.getTripTitle())
+        print(TripDataManager.shared.getTripStartDate())
+        print(TripDataManager.shared.getTripEndDate())
+        print(TripDataManager.shared.getTripLocation())
+        print(TripDataManager.shared.getTripColor())
+        
+        guard let presentingVC = self.presentingViewController,
+              let storyboard = self.storyboard ?? presentingVC.storyboard,
+              let tripNoteVC = storyboard.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController,
+              let tabBarController = presentingVC as? UITabBarController,
+              let selectedViewController = tabBarController.selectedViewController else {
+            print("tripNoteViewController를 인스턴스화할 수 없거나 navigationController에 접근할 수 없음")
+            return
+        }
+        
+        if let navigationController = selectedViewController as? UINavigationController ?? selectedViewController.navigationController {
+            self.dismiss(animated: true) {
+                navigationController.pushViewController(tripNoteVC, animated: true)
+            }
+        } else {
+            print("navigationController에 접근할 수 없음")
+        }
     }
 }
 
@@ -197,6 +226,30 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 50)
+        // 선택된 셀의 크기 증가
+        if let selectedIndexPath = selectedIndexPath, selectedIndexPath == indexPath {
+            return CGSize(width: 60, height: 60)
+        } else {
+            return CGSize(width: 50, height: 50)
+        }
+    }
+}
+
+extension BottomSheetViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = UIColor.darkGray.cgColor
+            addTripButton.isUserInteractionEnabled = true
+            addTripButton.backgroundColor = UIColor(named: "mainColor")
+            selectedColor = colors[indexPath.row]
+            // 다른 셀에 테두리가 있는 경우 이전에 선택한 셀의 테두리 제거
+            if let previousSelectedIndexPath = selectedIndexPath, previousSelectedIndexPath != indexPath {
+                if let previousSelectedCell = collectionView.cellForItem(at: previousSelectedIndexPath) {
+                    previousSelectedCell.layer.borderWidth = 0
+                }
+            }
+            selectedIndexPath = indexPath
+        }
     }
 }

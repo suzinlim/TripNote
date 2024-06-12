@@ -81,7 +81,12 @@ class SetTripDateViewController: UIViewController {
     }
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        guard let setTripAreaVC = self.storyboard?.instantiateViewController(withIdentifier: "setTripAreaViewController") as? SetTripAreaViewController else { return }
-        self.navigationController?.pushViewController(setTripAreaVC, animated: true)
+        // 데이터 저장
+        let startDate = startDatePicker.date
+        let endDate = endDatePicker.date
+        TripDataManager.shared.setTripDates(startDate: startDate, endDate: endDate)
+        
+        guard let setTripLocationVC = self.storyboard?.instantiateViewController(withIdentifier: "setTripLocationViewController") as? SetTripLocationViewController else { return }
+        self.navigationController?.pushViewController(setTripLocationVC, animated: true)
     }
 }
