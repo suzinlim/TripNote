@@ -44,7 +44,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
-        UIApplication.shared.windows.first?.rootViewController = tabBarVC
+        tabBarVC.modalPresentationStyle = .fullScreen
+        self.present(tabBarVC, animated: true)
     }
     
     private func checkCompletedButtonActivation() {

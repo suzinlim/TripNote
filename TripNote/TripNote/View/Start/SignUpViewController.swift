@@ -52,6 +52,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         guard let startVC = self.storyboard?.instantiateViewController(withIdentifier: "startViewController") as? StartViewController else { return }
+        startVC.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(startVC, animated: true)
     }
     
