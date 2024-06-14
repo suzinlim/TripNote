@@ -42,7 +42,7 @@
                             <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="addTripAreaTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="M1E-zT-Jfr"/>
+                            <action selector="addScheduleButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TqY-D7-f82"/>
                         </connections>
                     </button>
                 </subviews>

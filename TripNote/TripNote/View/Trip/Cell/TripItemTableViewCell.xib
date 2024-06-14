@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="KGk-i7-Jjw" customClass="TripItemTableViewCell" customModule="TripNote" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="321" height="106"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="KGk-i7-Jjw" customClass="TripItemTableViewCell" customModule="TripNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="149"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="321" height="106"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BI6-by-mY3">
@@ -29,44 +29,65 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwP-09-iVB">
-                        <rect key="frame" x="20" y="27" width="1" height="72"/>
+                        <rect key="frame" x="20" y="27" width="1" height="115"/>
                         <color key="backgroundColor" red="0.53064227980000001" green="0.52937495629999998" blue="0.53312421089999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="Wo3-cM-vLy"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIx-cw-a6A">
-                        <rect key="frame" x="37" y="10" width="279" height="86"/>
+                        <rect key="frame" x="37" y="10" width="279" height="129"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주애월해물한상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-6J-QDk">
-                                <rect key="frame" x="15.000000000000007" y="12.000000000000002" width="124.66666666666669" height="21.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <rect key="frame" x="15.000000000000007" y="5.9999999999999982" width="117.66666666666669" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="TNC-ay-9x6">
-                                <rect key="frame" x="10" y="38.666666666666664" width="20" height="20"/>
+                                <rect key="frame" x="10" y="33.333333333333336" width="17" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="NQG-XH-bn2"/>
-                                    <constraint firstAttribute="width" constant="20" id="OzN-r7-YQz"/>
+                                    <constraint firstAttribute="height" constant="17" id="NQG-XH-bn2"/>
+                                    <constraint firstAttribute="width" constant="17" id="OzN-r7-YQz"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주특별자치도 제주시 특별자치도, 애월읍 평화로 2369" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAQ-Iq-qZc">
-                                <rect key="frame" x="35" y="42.666666666666671" width="241" height="33.666666666666671"/>
+                                <rect key="frame" x="32" y="32.333333333333343" width="244" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsF-k9-K8g">
+                                <rect key="frame" x="15" y="76" width="256" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뷰가 예쁘니 갈 때 폴라로이드 카메라를 꼭 챙길 것" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-5k-H12">
+                                        <rect key="frame" x="10" y="8" width="236" height="13.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.8566463058623105" green="0.90270864280477792" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fPN-5k-H12" secondAttribute="trailing" constant="10" id="5om-6G-w3f"/>
+                                    <constraint firstItem="fPN-5k-H12" firstAttribute="leading" secondItem="SsF-k9-K8g" secondAttribute="leading" constant="10" id="LqX-IN-byx"/>
+                                    <constraint firstItem="fPN-5k-H12" firstAttribute="top" secondItem="SsF-k9-K8g" secondAttribute="top" constant="8" id="gND-8V-eAL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SsF-k9-K8g" secondAttribute="trailing" constant="8" id="0Zq-bc-2T2"/>
                             <constraint firstItem="TNC-ay-9x6" firstAttribute="leading" secondItem="QIx-cw-a6A" secondAttribute="leading" constant="10" id="6wl-ph-ze3"/>
-                            <constraint firstItem="xAQ-Iq-qZc" firstAttribute="top" secondItem="2Fw-6J-QDk" secondAttribute="bottom" constant="9" id="7Tm-gy-m91"/>
+                            <constraint firstItem="xAQ-Iq-qZc" firstAttribute="top" secondItem="2Fw-6J-QDk" secondAttribute="bottom" constant="6" id="7Tm-gy-m91"/>
+                            <constraint firstAttribute="bottom" secondItem="SsF-k9-K8g" secondAttribute="bottom" constant="5" id="7ds-sG-NpE"/>
                             <constraint firstAttribute="trailing" secondItem="xAQ-Iq-qZc" secondAttribute="trailing" constant="3" id="8AN-lV-rSh"/>
                             <constraint firstItem="2Fw-6J-QDk" firstAttribute="leading" secondItem="QIx-cw-a6A" secondAttribute="leading" constant="15" id="JMX-y8-MC0"/>
-                            <constraint firstItem="TNC-ay-9x6" firstAttribute="top" secondItem="2Fw-6J-QDk" secondAttribute="bottom" constant="5" id="ZJt-QI-QVU"/>
+                            <constraint firstItem="SsF-k9-K8g" firstAttribute="leading" secondItem="QIx-cw-a6A" secondAttribute="leading" constant="15" id="TDU-yc-kwk"/>
+                            <constraint firstItem="TNC-ay-9x6" firstAttribute="top" secondItem="2Fw-6J-QDk" secondAttribute="bottom" constant="7" id="ZJt-QI-QVU"/>
                             <constraint firstItem="xAQ-Iq-qZc" firstAttribute="leading" secondItem="TNC-ay-9x6" secondAttribute="trailing" constant="5" id="cqw-z1-Bku"/>
-                            <constraint firstItem="2Fw-6J-QDk" firstAttribute="top" secondItem="QIx-cw-a6A" secondAttribute="top" constant="12" id="zhC-fK-jds"/>
+                            <constraint firstItem="SsF-k9-K8g" firstAttribute="top" secondItem="xAQ-Iq-qZc" secondAttribute="bottom" constant="10" id="yIb-Nd-TNp"/>
+                            <constraint firstItem="2Fw-6J-QDk" firstAttribute="top" secondItem="QIx-cw-a6A" secondAttribute="top" constant="6" id="zhC-fK-jds"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -86,13 +107,13 @@
             <connections>
                 <outlet property="numberLabel" destination="BI6-by-mY3" id="bDA-UH-rcc"/>
             </connections>
-            <point key="canvasLocation" x="55.725190839694655" y="22.535211267605636"/>
+            <point key="canvasLocation" x="55.725190839694655" y="36.971830985915496"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="map" width="30" height="30"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

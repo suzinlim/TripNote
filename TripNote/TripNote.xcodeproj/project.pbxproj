@@ -36,6 +36,7 @@
 		0A5E45FD2C18BBF600EF8767 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */; };
 		0A65C72E2C14BCE500FFB48E /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 0A65C72D2C14BCE500FFB48E /* Then */; };
 		0A65C7312C14BCF300FFB48E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A65C7302C14BCF300FFB48E /* SnapKit */; };
+		0A72C8882C1C33EE0030F69C /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72C8872C1C33EE0030F69C /* AddScheduleViewController.swift */; };
 		0A745F402C19A64E00DAE442 /* TripDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F3F2C19A64E00DAE442 /* TripDataManager.swift */; };
 		0A745F422C19C78100DAE442 /* SetTripLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F412C19C78100DAE442 /* SetTripLocationViewController.swift */; };
 		0A745F452C19DCBE00DAE442 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F442C19DCBE00DAE442 /* StartViewController.swift */; };
@@ -43,6 +44,7 @@
 		0A745F492C19DCCA00DAE442 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F482C19DCCA00DAE442 /* SignUpViewController.swift */; };
 		0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */; };
 		0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */; };
+		0AB1988C2C1C993A001F8A2D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0AB1988B2C1C993A001F8A2D /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,7 @@
 		0A5E45F82C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEnteredTripItemTableViewCell.swift; sourceTree = "<group>"; };
 		0A5E45F92C18B70000EF8767 /* NotEnteredTripItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotEnteredTripItemTableViewCell.xib; sourceTree = "<group>"; };
 		0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		0A72C8872C1C33EE0030F69C /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
 		0A745F3F2C19A64E00DAE442 /* TripDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDataManager.swift; sourceTree = "<group>"; };
 		0A745F412C19C78100DAE442 /* SetTripLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripLocationViewController.swift; sourceTree = "<group>"; };
 		0A745F442C19DCBE00DAE442 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A65C72E2C14BCE500FFB48E /* Then in Frameworks */,
+				0AB1988C2C1C993A001F8A2D /* FirebaseAuth in Frameworks */,
 				0A5920052C1ADC360024A743 /* FirebaseStorage in Frameworks */,
 				0A65C7312C14BCF300FFB48E /* SnapKit in Frameworks */,
 				0A5920032C1ADC360024A743 /* FirebaseFirestore in Frameworks */,
@@ -160,6 +164,7 @@
 				0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */,
 				0A4E574A2C15AE7900D24D7E /* TripNoteViewController.swift */,
 				0A4E57542C15CF6A00D24D7E /* TripHeaderView.swift */,
+				0A72C8872C1C33EE0030F69C /* AddScheduleViewController.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				0A65C7302C14BCF300FFB48E /* SnapKit */,
 				0A5920022C1ADC360024A743 /* FirebaseFirestore */,
 				0A5920042C1ADC360024A743 /* FirebaseStorage */,
+				0AB1988B2C1C993A001F8A2D /* FirebaseAuth */,
 			);
 			productName = TripNote;
 			productReference = 0A3758372C10BB9E002808A0 /* TripNote.app */;
@@ -464,6 +470,7 @@
 				0A745F402C19A64E00DAE442 /* TripDataManager.swift in Sources */,
 				0A3758822C10CF41002808A0 /* TripCollectionViewCell.swift in Sources */,
 				0A745F472C19DCC200DAE442 /* LoginViewController.swift in Sources */,
+				0A72C8882C1C33EE0030F69C /* AddScheduleViewController.swift in Sources */,
 				0A4E574B2C15AE7900D24D7E /* TripNoteViewController.swift in Sources */,
 				0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */,
 				0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */,
@@ -870,6 +877,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A65C72F2C14BCF300FFB48E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		0AB1988B2C1C993A001F8A2D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A5920012C1ADC350024A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

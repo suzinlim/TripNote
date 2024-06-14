@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TripNoteViewController: UIViewController {
+class TripNoteViewController: UIViewController, NotEnteredTripItemTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -41,12 +41,10 @@ class TripNoteViewController: UIViewController {
     }
     
     @objc func backButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        if let rootViewController = navigationController?.viewControllers.first {
+            navigationController?.popToViewController(rootViewController, animated: true)
+        }
     }
-}
-
-extension TripNoteViewController: UITableViewDelegate {
-    
 }
 
 extension TripNoteViewController: UITableViewDataSource {
@@ -64,6 +62,7 @@ extension TripNoteViewController: UITableViewDataSource {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: TripItemTableViewCell.cellIdentifier, for: indexPath) as! TripItemTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: NotEnteredTripItemTableViewCell.cellIdentifier, for: indexPath) as! NotEnteredTripItemTableViewCell
         cell.configure(at: indexPath)
+        cell.delegate = self
 
         return cell
     }
@@ -94,5 +93,16 @@ extension TripNoteViewController: UITableViewDataSource {
         editAction.backgroundColor = UIColor(named: "mainColor")
 
         return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    }
+}
+
+extension TripNoteViewController: UITableViewDelegate {
+    func addScheduleTapped(cell: NotEnteredTripItemTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            guard let addScheduleVC = self.storyboard?.instantiateViewController(withIdentifier: "addScheduleViewController") as? AddScheduleViewController else { return }
+            let navigationController = UINavigationController(rootViewController: addScheduleVC)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true)
+        }
     }
 }

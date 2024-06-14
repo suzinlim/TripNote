@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol NotEnteredTripItemTableViewCellDelegate: AnyObject {
+    func addScheduleTapped(cell: NotEnteredTripItemTableViewCell)
+}
+
 class NotEnteredTripItemTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "NotEnteredTripItemTableViewCell"
+    var delegate: NotEnteredTripItemTableViewCellDelegate?
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -26,7 +31,7 @@ class NotEnteredTripItemTableViewCell: UITableViewCell {
         dayLabel.text = "Day " + String(indexPath.row + 1)
     }
     
-    @IBAction func addTripAreaTapped(_ sender: UIButton) {
-        
+    @IBAction func addScheduleButtonTapped(_ sender: UIButton) {
+        delegate?.addScheduleTapped(cell: self)
     }
 }
