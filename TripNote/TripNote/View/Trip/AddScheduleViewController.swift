@@ -20,7 +20,7 @@ class AddScheduleViewController: UIViewController {
         setTextViewDelegate()
         setTextFieldDelegate()
         configureView()
-        checkCompletedButtonState()
+        checkCompletedButtonActivation()
     }
     
     private func setTextViewDelegate() {
@@ -66,10 +66,10 @@ class AddScheduleViewController: UIViewController {
     }
     
     @objc private func textFieldDidChange(_ textField: UITextField) {
-        checkCompletedButtonState()
+        checkCompletedButtonActivation()
     }
     
-    private func checkCompletedButtonState() {
+    private func checkCompletedButtonActivation() {
         let isLocationTextFilled = !(locationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
         let isMemoTextFilled = !(memoTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true) && memoTextView.text != textViewPlaceHolder
         
@@ -91,11 +91,11 @@ extension AddScheduleViewController: UITextViewDelegate {
             textView.text = textViewPlaceHolder
             textView.textColor = .opaqueSeparator
         }
-        checkCompletedButtonState()
+        checkCompletedButtonActivation()
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        checkCompletedButtonState()
+        checkCompletedButtonActivation()
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -113,7 +113,7 @@ extension AddScheduleViewController: UITextViewDelegate {
 extension AddScheduleViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         DispatchQueue.main.async {
-            self.checkCompletedButtonState()
+            self.checkCompletedButtonActivation()
         }
         return true
     }

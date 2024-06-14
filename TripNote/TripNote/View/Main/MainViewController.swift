@@ -6,16 +6,43 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
     @IBOutlet weak var tripCollectionView: UICollectionView!
+    @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
+    
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserInfo()
         setupCollectionView()
         setupCollectionViewLayout()
         registerCollectionViewCell()
+    }
+    
+    private func getUserInfo() {
+        if let currentUser = Auth.auth().currentUser {
+            self.user = currentUser
+            
+            guard let user = self.user else { return }
+            
+            let db = Firestore.firestore()
+            let usersRef = db.collection("users").document(user.uid)
+            
+            usersRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    if let nickname = document.data()? ["nickname"] as? String {
+                        print("닉네임: \(nickname)")
+                        self.nickNameLabel.text = "\(nickname)님의 여행 노트"
+                    }
+                } else {
+                    print("사용자 정보를 가져오는 데 실패했습니다.")
+                }
+            }
+        }
     }
     
     private func setupCollectionView() {
