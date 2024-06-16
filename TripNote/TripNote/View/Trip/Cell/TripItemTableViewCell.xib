@@ -105,7 +105,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="memoLabel" destination="fPN-5k-H12" id="hb8-Oh-rsq"/>
+                <outlet property="memoView" destination="SsF-k9-K8g" id="7Yh-06-X8d"/>
                 <outlet property="numberLabel" destination="BI6-by-mY3" id="bDA-UH-rcc"/>
+                <outlet property="placeDetailLabel" destination="xAQ-Iq-qZc" id="Q5n-hr-BGU"/>
+                <outlet property="placeLabel" destination="2Fw-6J-QDk" id="9zz-CL-c9w"/>
             </connections>
             <point key="canvasLocation" x="55.725190839694655" y="36.971830985915496"/>
         </tableViewCell>

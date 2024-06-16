@@ -62,7 +62,6 @@ class SetTripTitleViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        // 데이터 저장
         if let title = titleTextField.text, !title.isEmpty {
             TripDataManager.shared.setTripTitle(title)
         }

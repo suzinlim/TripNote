@@ -20,6 +20,13 @@
 		0A3758792C10CD0A002808A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3758782C10CD0A002808A0 /* MainViewController.swift */; };
 		0A3758812C10CF41002808A0 /* TripCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3758802C10CF41002808A0 /* TripCollectionViewCell.xib */; };
 		0A3758822C10CF41002808A0 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37587F2C10CF41002808A0 /* TripCollectionViewCell.swift */; };
+		0A47156F2C1D58DB007AC625 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0A47156E2C1D58DB007AC625 /* FirebaseDatabase */; };
+		0A4715712C1D618E007AC625 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4715702C1D618E007AC625 /* TripModel.swift */; };
+		0A4715732C1D6295007AC625 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4715722C1D6295007AC625 /* UIColor+Extension.swift */; };
+		0A4715752C1D83F9007AC625 /* EditTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4715742C1D83F8007AC625 /* EditTripViewController.swift */; };
+		0A4715772C1DB868007AC625 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4715762C1DB868007AC625 /* ScheduleModel.swift */; };
+		0A4715802C1DE9FF007AC625 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47157E2C1DE9FF007AC625 /* EmptyCollectionViewCell.swift */; };
+		0A4715812C1DE9FF007AC625 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A47157F2C1DE9FF007AC625 /* EmptyCollectionViewCell.xib */; };
 		0A4E574B2C15AE7900D24D7E /* TripNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E574A2C15AE7900D24D7E /* TripNoteViewController.swift */; };
 		0A4E57522C15B70200D24D7E /* TripItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E57502C15B70200D24D7E /* TripItemTableViewCell.swift */; };
 		0A4E57532C15B70200D24D7E /* TripItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4E57512C15B70200D24D7E /* TripItemTableViewCell.xib */; };
@@ -44,6 +51,11 @@
 		0A745F492C19DCCA00DAE442 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F482C19DCCA00DAE442 /* SignUpViewController.swift */; };
 		0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */; };
 		0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */; };
+		0AAB36F32C1ED75100D6A599 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 0AAB36F22C1ED75100D6A599 /* BSImagePicker */; };
+		0AAB36F62C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB36F42C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift */; };
+		0AAB36F72C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAB36F52C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib */; };
+		0AAB36F92C1EE6EA00D6A599 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB36F82C1EE6EA00D6A599 /* DiaryModel.swift */; };
+		0AAB36FC2C1EE7F300D6A599 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0AAB36FB2C1EE7F300D6A599 /* SDWebImageSwiftUI */; };
 		0AB1988C2C1C993A001F8A2D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0AB1988B2C1C993A001F8A2D /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +94,12 @@
 		0A3758782C10CD0A002808A0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A37587F2C10CF41002808A0 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A3758802C10CF41002808A0 /* TripCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCollectionViewCell.xib; sourceTree = "<group>"; };
+		0A4715702C1D618E007AC625 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		0A4715722C1D6295007AC625 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		0A4715742C1D83F8007AC625 /* EditTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewController.swift; sourceTree = "<group>"; };
+		0A4715762C1DB868007AC625 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		0A47157E2C1DE9FF007AC625 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A47157F2C1DE9FF007AC625 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		0A4E574A2C15AE7900D24D7E /* TripNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripNoteViewController.swift; sourceTree = "<group>"; };
 		0A4E57502C15B70200D24D7E /* TripItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripItemTableViewCell.swift; sourceTree = "<group>"; };
 		0A4E57512C15B70200D24D7E /* TripItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -102,6 +120,9 @@
 		0A745F482C19DCCA00DAE442 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripTitleViewController.swift; sourceTree = "<group>"; };
 		0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripDateViewController.swift; sourceTree = "<group>"; };
+		0AAB36F42C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		0AAB36F52C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		0AAB36F82C1EE6EA00D6A599 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +130,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AAB36F32C1ED75100D6A599 /* BSImagePicker in Frameworks */,
+				0A47156F2C1D58DB007AC625 /* FirebaseDatabase in Frameworks */,
 				0A65C72E2C14BCE500FFB48E /* Then in Frameworks */,
 				0AB1988C2C1C993A001F8A2D /* FirebaseAuth in Frameworks */,
+				0AAB36FC2C1EE7F300D6A599 /* SDWebImageSwiftUI in Frameworks */,
 				0A5920052C1ADC360024A743 /* FirebaseStorage in Frameworks */,
 				0A65C7312C14BCF300FFB48E /* SnapKit in Frameworks */,
 				0A5920032C1ADC360024A743 /* FirebaseFirestore in Frameworks */,
@@ -138,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				0A08113E2C130A4200F6EEFF /* UILabel+Extension.swift */,
+				0A4715722C1D6295007AC625 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -174,15 +199,9 @@
 			children = (
 				0A4E57562C15CF9600D24D7E /* Cell */,
 				0A3758782C10CD0A002808A0 /* MainViewController.swift */,
+				0A4715742C1D83F8007AC625 /* EditTripViewController.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		0A28A5162C1753B100E62668 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		0A37582E2C10BB9E002808A0 = {
@@ -256,6 +275,8 @@
 			children = (
 				0A37587F2C10CF41002808A0 /* TripCollectionViewCell.swift */,
 				0A3758802C10CF41002808A0 /* TripCollectionViewCell.xib */,
+				0A47157E2C1DE9FF007AC625 /* EmptyCollectionViewCell.swift */,
+				0A47157F2C1DE9FF007AC625 /* EmptyCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -275,6 +296,8 @@
 			children = (
 				0A4E57692C15EA9F00D24D7E /* DiaryTableViewCell.swift */,
 				0A4E576A2C15EA9F00D24D7E /* DiaryTableViewCell.xib */,
+				0AAB36F42C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift */,
+				0AAB36F52C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -282,7 +305,6 @@
 		0A4E576D2C15F1A000D24D7E /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				0A28A5162C1753B100E62668 /* Cell */,
 				0A4E576E2C15F1C200D24D7E /* MyPageViewController.swift */,
 			);
 			path = MyPage;
@@ -299,6 +321,9 @@
 			isa = PBXGroup;
 			children = (
 				0A745F3F2C19A64E00DAE442 /* TripDataManager.swift */,
+				0A4715702C1D618E007AC625 /* TripModel.swift */,
+				0A4715762C1DB868007AC625 /* ScheduleModel.swift */,
+				0AAB36F82C1EE6EA00D6A599 /* DiaryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +360,9 @@
 				0A5920022C1ADC360024A743 /* FirebaseFirestore */,
 				0A5920042C1ADC360024A743 /* FirebaseStorage */,
 				0AB1988B2C1C993A001F8A2D /* FirebaseAuth */,
+				0A47156E2C1D58DB007AC625 /* FirebaseDatabase */,
+				0AAB36F22C1ED75100D6A599 /* BSImagePicker */,
+				0AAB36FB2C1EE7F300D6A599 /* SDWebImageSwiftUI */,
 			);
 			productName = TripNote;
 			productReference = 0A3758372C10BB9E002808A0 /* TripNote.app */;
@@ -412,6 +440,8 @@
 				0A65C72C2C14BCE500FFB48E /* XCRemoteSwiftPackageReference "Then" */,
 				0A65C72F2C14BCF300FFB48E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				0A5920012C1ADC350024A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0AAB36F12C1ED75100D6A599 /* XCRemoteSwiftPackageReference "BSImagePicker" */,
+				0AAB36FA2C1EE7F300D6A599 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 0A3758382C10BB9E002808A0 /* Products */;
 			projectDirPath = "";
@@ -429,6 +459,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4715812C1DE9FF007AC625 /* EmptyCollectionViewCell.xib in Resources */,
+				0AAB36F72C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib in Resources */,
 				0A3758442C10BB9F002808A0 /* Assets.xcassets in Resources */,
 				0A5920002C1ADBAB0024A743 /* GoogleService-Info.plist in Resources */,
 				0A3758812C10CF41002808A0 /* TripCollectionViewCell.xib in Resources */,
@@ -463,25 +495,32 @@
 			files = (
 				0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */,
 				0A4E576B2C15EA9F00D24D7E /* DiaryTableViewCell.swift in Sources */,
+				0A4715772C1DB868007AC625 /* ScheduleModel.swift in Sources */,
 				0A4E57522C15B70200D24D7E /* TripItemTableViewCell.swift in Sources */,
 				0A37583B2C10BB9E002808A0 /* AppDelegate.swift in Sources */,
 				0A745F422C19C78100DAE442 /* SetTripLocationViewController.swift in Sources */,
+				0A4715752C1D83F9007AC625 /* EditTripViewController.swift in Sources */,
 				0A4E57552C15CF6A00D24D7E /* TripHeaderView.swift in Sources */,
 				0A745F402C19A64E00DAE442 /* TripDataManager.swift in Sources */,
 				0A3758822C10CF41002808A0 /* TripCollectionViewCell.swift in Sources */,
 				0A745F472C19DCC200DAE442 /* LoginViewController.swift in Sources */,
 				0A72C8882C1C33EE0030F69C /* AddScheduleViewController.swift in Sources */,
 				0A4E574B2C15AE7900D24D7E /* TripNoteViewController.swift in Sources */,
+				0AAB36F92C1EE6EA00D6A599 /* DiaryModel.swift in Sources */,
 				0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */,
 				0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */,
 				0A5E45FB2C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift in Sources */,
 				0A4E576F2C15F1C200D24D7E /* MyPageViewController.swift in Sources */,
+				0A4715732C1D6295007AC625 /* UIColor+Extension.swift in Sources */,
 				0A4E57642C15E65400D24D7E /* DiaryViewController.swift in Sources */,
 				0A745F492C19DCCA00DAE442 /* SignUpViewController.swift in Sources */,
+				0A4715712C1D618E007AC625 /* TripModel.swift in Sources */,
 				0A745F452C19DCBE00DAE442 /* StartViewController.swift in Sources */,
 				0A5E45FD2C18BBF600EF8767 /* BottomSheetViewController.swift in Sources */,
 				0A37583D2C10BB9E002808A0 /* SceneDelegate.swift in Sources */,
 				0A28A5182C175A6A00E62668 /* AddDiaryViewController.swift in Sources */,
+				0AAB36F62C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift in Sources */,
+				0A4715802C1DE9FF007AC625 /* EmptyCollectionViewCell.swift in Sources */,
 				0A3758792C10CD0A002808A0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,6 +706,7 @@
 				DEVELOPMENT_TEAM = 7LVZCMHQG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TripNote/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "일기를 작성하기 위해서 사진 라이브러리에 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -695,6 +735,7 @@
 				DEVELOPMENT_TEAM = 7LVZCMHQG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TripNote/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "일기를 작성하기 위해서 사진 라이브러리에 접근이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -855,9 +896,30 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		0AAB36F12C1ED75100D6A599 /* XCRemoteSwiftPackageReference "BSImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mikaoj/BSImagePicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.3;
+			};
+		};
+		0AAB36FA2C1EE7F300D6A599 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0A47156E2C1D58DB007AC625 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A5920012C1ADC350024A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		0A5920022C1ADC360024A743 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0A5920012C1ADC350024A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -877,6 +939,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A65C72F2C14BCF300FFB48E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		0AAB36F22C1ED75100D6A599 /* BSImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AAB36F12C1ED75100D6A599 /* XCRemoteSwiftPackageReference "BSImagePicker" */;
+			productName = BSImagePicker;
+		};
+		0AAB36FB2C1EE7F300D6A599 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AAB36FA2C1EE7F300D6A599 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		0AB1988B2C1C993A001F8A2D /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

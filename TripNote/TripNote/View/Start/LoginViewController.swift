@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
                 if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                    let window = windowScene.windows.first {
                     window.rootViewController = tabBarVC
-                    UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+                    UIView.transition(with: window, duration: 0.9, options: .transitionCrossDissolve, animations: nil, completion: nil)
                 }
             }
         }

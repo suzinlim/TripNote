@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EmptyCollectionViewCell" customModule="TripNote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="379"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="291" height="379"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여행 노트를 추가해보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-mi-Gvq">
+                        <rect key="frame" x="31.999999999999986" y="130" width="225.66666666666663" height="25.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                        <color key="textColor" name="mainColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplane" translatesAutoresizingMaskIntoConstraints="NO" id="KVl-d8-I9t">
+                        <rect key="frame" x="100" y="190.33333333333334" width="80" height="90.000000000000028"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="eeE-lX-trI"/>
+                            <constraint firstAttribute="width" constant="80" id="j9M-Tn-j2f"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KVl-d8-I9t" firstAttribute="top" secondItem="jdB-mi-Gvq" secondAttribute="bottom" constant="35" id="2UH-4f-Ruu"/>
+                <constraint firstItem="KVl-d8-I9t" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="100" id="48D-es-gdL"/>
+                <constraint firstItem="jdB-mi-Gvq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="MhC-j7-9PN"/>
+                <constraint firstItem="jdB-mi-Gvq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="130" id="iGS-ty-UaU"/>
+            </constraints>
+            <size key="customSize" width="291" height="379"/>
+            <point key="canvasLocation" x="300" y="135.56338028169014"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="airplane" width="1401.6666259765625" height="1401.6666259765625"/>
+        <namedColor name="mainColor">
+            <color red="0.35294117647058826" green="0.50196078431372548" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

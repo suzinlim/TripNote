@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class AddScheduleViewController: UIViewController {
     
@@ -15,12 +16,24 @@ class AddScheduleViewController: UIViewController {
     
     let textViewPlaceHolder = "메모를 입력하세요"
     
+    var trip: TripModel?
+    var selectedDate: Date?
+    var schedule: ScheduleModel?
+    var scheduleId: String?
+    var editingSchedule: ScheduleModel?
+    
+    var scheduleAddedOrUpdated: ((ScheduleModel) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkCompletedButtonActivation()
         setTextViewDelegate()
         setTextFieldDelegate()
         configureView()
         checkCompletedButtonActivation()
+        if let editingSchedule = editingSchedule {
+            fetchData()
+        }
     }
     
     private func setTextViewDelegate() {
@@ -29,11 +42,10 @@ class AddScheduleViewController: UIViewController {
     
     private func setTextFieldDelegate() {
         locationTextField.delegate = self
-        locationTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     private func configureView() {
-        // MARK: 네비게이션 바 설정
+        // -MARK: 네비게이션 바 설정
         // 뒤로 가기 버튼 안 보이게 함
         self.navigationItem.hidesBackButton = true
         
@@ -53,7 +65,6 @@ class AddScheduleViewController: UIViewController {
         memoTextView.layer.cornerRadius = 5
         
         // 완료 Button
-        completedButton.isUserInteractionEnabled = false
         completedButton.layer.cornerRadius = 10
     }
     
@@ -62,11 +73,18 @@ class AddScheduleViewController: UIViewController {
     }
     
     @IBAction func completedButtonTapped(_ sender: UIButton) {
+        let location = locationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let memo = memoTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        guard !location.isEmpty, !memo.isEmpty, let selectedDate = selectedDate else { return }
+        
+        // Schedule 객체 생성
+        var newSchedule = ScheduleModel(date: selectedDate, place: location, memo: memo)
+        
+        // Firebase에 데이터 저장
+        saveToFirebase(schedule: newSchedule)
+        
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc private func textFieldDidChange(_ textField: UITextField) {
-        checkCompletedButtonActivation()
     }
     
     private func checkCompletedButtonActivation() {
@@ -76,8 +94,58 @@ class AddScheduleViewController: UIViewController {
         completedButton.isUserInteractionEnabled = isLocationTextFilled && isMemoTextFilled
         completedButton.backgroundColor = isLocationTextFilled && isMemoTextFilled ? UIColor(named: "mainColor") : .opaqueSeparator
     }
+    
+    private func fetchData() {
+        if let editingSchedule = editingSchedule {
+            locationTextField.text = editingSchedule.place
+            memoTextView.text = editingSchedule.memo
+            memoTextView.textColor = .black
+        }
+    }
+    
+    private func saveToFirebase(schedule: ScheduleModel) {
+        guard let tripId = trip?.id else { return }
+        
+        let db = Firestore.firestore()
+        var scheduleRef: DocumentReference
+        
+        if let scheduleId = scheduleId {
+            // 기존 일정 수정인 경우
+            scheduleRef = db.collection("trips").document(tripId).collection("schedules").document(scheduleId)
+        } else {
+            // 새로운 일정 추가인 경우
+            scheduleRef = db.collection("trips").document(tripId).collection("schedules").document()
+            scheduleId = scheduleRef.documentID
+        }
+        
+        var data: [String: Any] = [
+            "place": schedule.place,
+            "memo": schedule.memo,
+            "date": Timestamp(date: schedule.date),
+            "createdAt": FieldValue.serverTimestamp()
+        ]
+        
+        scheduleRef.setData(data) { [weak self] error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("일정 추가 실패: \(error)")
+            } else {
+                if self.scheduleId == nil {
+                    self.scheduleId = scheduleRef.documentID
+                    print("일정 추가: \(scheduleRef.documentID)")
+                } else {
+                    print("일정 수정: \(self.scheduleId!)")
+                }
+            }
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
 }
 
+// -MARK: UITextViewDelegate
 extension AddScheduleViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {
@@ -110,6 +178,7 @@ extension AddScheduleViewController: UITextViewDelegate {
     }
 }
 
+// -MARK: UITextFieldDelegate
 extension AddScheduleViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         DispatchQueue.main.async {

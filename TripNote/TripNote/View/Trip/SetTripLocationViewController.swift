@@ -9,11 +9,13 @@ import UIKit
 
 class SetTripLocationViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet var exampleButtons: [UIButton]!
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        setExampleButtons()
     }
     
     private func configureView() {
@@ -33,6 +35,13 @@ class SetTripLocationViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    private func setExampleButtons() {
+        for button in exampleButtons {
+            button.layer.cornerRadius = 9
+            button.addTarget(self, action: #selector(exampleButtonTapped), for: .touchUpInside)
+        }
+    }
+    
     @objc func textFieldDidChange(_ sender: UITextField) {
         if let titleText = sender.text {
             if titleText.count > 0 {
@@ -43,6 +52,12 @@ class SetTripLocationViewController: UIViewController {
                 nextButton.backgroundColor = UIColor.opaqueSeparator
             }
         }
+    }
+    
+    @objc func exampleButtonTapped(_ sender: UIButton) {
+        locationTextField.text = sender.titleLabel?.text
+        nextButton.isUserInteractionEnabled = true
+        nextButton.backgroundColor = UIColor(named: "mainColor")
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {

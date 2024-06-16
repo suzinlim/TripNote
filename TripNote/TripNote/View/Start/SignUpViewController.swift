@@ -15,7 +15,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var password2TextField: UITextField!
     @IBOutlet weak var completedButton: UIButton!
-    @IBOutlet weak var emailCheckButton: UIButton!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var password2Label: UILabel!
@@ -38,39 +37,14 @@ class SignUpViewController: UIViewController {
     }
     
     func setupErrorLabels() {
-        // 이메일 에러 Label
-        emailErrorLabel = UILabel().then {
-            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.textColor = UIColor(named: "Color1")
-            $0.isHidden = true
-        }
+        // 에러 Label
+        emailErrorLabel = createErrorLabel()
+        nickNameErrorLabel = createErrorLabel()
+        passwordErrorLabel = createErrorLabel()
+        password2ErrorLabel = createErrorLabel()
         
-        // 닉네임 에러 Label
-        nickNameErrorLabel = UILabel().then {
-            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.textColor = UIColor(named: "Color1")
-            $0.isHidden = true
-        }
-        
-        // 비밀번호 에러 Label
-        passwordErrorLabel = UILabel().then {
-            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.textColor = UIColor(named: "Color1")
-            $0.isHidden = true
-            $0.numberOfLines = 0
-        }
-        
-        // 비밀번호 확인 에러 Label
-        password2ErrorLabel = UILabel().then {
-            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-            $0.textColor = UIColor(named: "Color1")
-            $0.isHidden = true
-        }
-        
-        [emailErrorLabel,
-         nickNameErrorLabel,
-         passwordErrorLabel,
-         password2ErrorLabel].forEach { view.addSubview($0) }
+        [emailErrorLabel, nickNameErrorLabel, passwordErrorLabel, password2ErrorLabel]
+            .forEach { view.addSubview($0) }
         
         emailErrorLabel.snp.makeConstraints {
             $0.top.equalTo(emailTextField.snp.bottom).offset(4)
@@ -93,6 +67,14 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    private func createErrorLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = UIColor(named: "Color1")
+        label.isHidden = true
+        return label
+    }
+    
     private func setTextFieldDelegate() {
         emailTextField.delegate = self
         nickNameTextField.delegate = self
@@ -105,9 +87,6 @@ class SignUpViewController: UIViewController {
         let backbutton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(backButtonTapped))
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationItem.leftBarButtonItem = backbutton
-        
-        // 이메일 중복 확인 버튼
-        emailCheckButton.layer.cornerRadius = 6
         
         // 완료 버튼
         completedButton.isUserInteractionEnabled = false
@@ -152,33 +131,31 @@ class SignUpViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 print("회원가입 실패: \(error.localizedDescription)")
-            } else {
-                print("회원가입 성공")
+            } 
+            
+            guard let uid = authResult?.user.uid else {
+                print("UID를 가져올 수 없습니다.")
+                return
+            }
+            
+            // Firestore에 사용자 정보 저장
+            let db = Firestore.firestore()
+            let userData = [
+                "email": email,
+                "nickname": nickName
+            ]
 
-                guard let uid = authResult?.user.uid else {
-                    print("UID를 가져올 수 없습니다.")
-                    return
-                }
+            db.collection("users").document(uid).setData(userData) { error in
+                if let error = error {
+                    print("Firestore에 사용자 정보 저장 실패: \(error.localizedDescription)")
+                } else {
+                    print("회원가입 완료")
 
-                // Firestore에 사용자 정보 저장
-                let db = Firestore.firestore()
-                let userData = [
-                    "email": email,
-                    "nickname": nickName
-                ]
-
-                db.collection("users").document(uid).setData(userData) { error in
-                    if let error = error {
-                        print("Firestore에 사용자 정보 저장 실패: \(error.localizedDescription)")
-                    } else {
-                        print("Firestore에 사용자 정보 저장 성공")
-
-                        // 회원가입 완료 후 시작화면으로 이동
-                        DispatchQueue.main.async {
-                            guard let startVC = self.storyboard?.instantiateViewController(withIdentifier: "startViewController") as? StartViewController else { return }
-                            startVC.navigationItem.hidesBackButton = true
-                            self.navigationController?.pushViewController(startVC, animated: true)
-                        }
+                    // 회원가입 완료 후 시작화면으로 이동
+                    DispatchQueue.main.async {
+                        guard let startVC = self.storyboard?.instantiateViewController(withIdentifier: "startViewController") as? StartViewController else { return }
+                        startVC.navigationItem.hidesBackButton = true
+                        self.navigationController?.pushViewController(startVC, animated: true)
                     }
                 }
             }
@@ -199,11 +176,6 @@ class SignUpViewController: UIViewController {
         // 영문 숫자 조합, 최소 8자
         let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d).{8,}$"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
-    }
-    
-    // TODO: 이메일 중복 확인 검사
-    @IBAction func checkButtonTapped(_ sender: UIButton) {
-        print("안할수도")
     }
     
     private func checkCompletedButtonActivation() {

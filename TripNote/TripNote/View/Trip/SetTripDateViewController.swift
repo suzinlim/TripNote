@@ -81,7 +81,6 @@ class SetTripDateViewController: UIViewController {
     }
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        // 데이터 저장
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
         TripDataManager.shared.setTripDates(startDate: startDate, endDate: endDate)

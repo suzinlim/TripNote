@@ -8,6 +8,8 @@
 import UIKit
 import SnapKit
 import Then
+import FirebaseAuth
+import FirebaseFirestore
 
 class BottomSheetViewController: UIViewController {
     
@@ -181,7 +183,6 @@ class BottomSheetViewController: UIViewController {
     }
     
     @objc func addTripButtonTapped() {
-        // 데이터 저장
         guard let color = selectedColor else { return }
         TripDataManager.shared.setTripColor(color)
         
@@ -192,21 +193,63 @@ class BottomSheetViewController: UIViewController {
         print(TripDataManager.shared.getTripLocation())
         print(TripDataManager.shared.getTripColor())
         
-        guard let presentingVC = self.presentingViewController,
-              let storyboard = self.storyboard ?? presentingVC.storyboard,
-              let tripNoteVC = storyboard.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController,
-              let tabBarController = presentingVC as? UITabBarController,
-              let selectedViewController = tabBarController.selectedViewController else {
-            print("tripNoteViewController를 인스턴스화할 수 없거나 navigationController에 접근할 수 없음")
-            return
-        }
+        saveTrip()
+    }
+    
+    private func saveTrip() {
+        guard let color = selectedColor?.hexString,
+              let title = TripDataManager.shared.getTripModel()!.title,
+              let startDate = TripDataManager.shared.getTripModel()!.startDate,
+              let endDate = TripDataManager.shared.getTripModel()!.endDate,
+              let location = TripDataManager.shared.getTripModel()!.location,
+              let currentUser = Auth.auth().currentUser
+        else { return }
         
-        if let navigationController = selectedViewController as? UINavigationController ?? selectedViewController.navigationController {
-            self.dismiss(animated: true) {
-                navigationController.pushViewController(tripNoteVC, animated: true)
+        let db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        ref = db.collection("trips").addDocument(data: [
+            "title": title,
+            "startDate": startDate,
+            "endDate": endDate,
+            "location": location,
+            "color": color,
+            "userId": currentUser.uid,
+            "createdAt": FieldValue.serverTimestamp()
+        ]) { error in
+            if let error = error {
+                print("여행 추가 실패: \(error.localizedDescription)")
+            } else {
+                print("여행 추가 성공: \(ref!.documentID)")
+                
+                DispatchQueue.main.async {
+                    // TripDataManager의 데이터 초기화
+                    TripDataManager.shared.clearTripModel()
+                    
+                    guard let presentingVC = self.presentingViewController,
+                          let storyboard = self.storyboard ?? presentingVC.storyboard,
+                          let tripNoteVC = storyboard.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController,
+                          let tabBarController = presentingVC as? UITabBarController,
+                          let selectedViewController = tabBarController.selectedViewController else {
+                        print("tripNoteViewController를 인스턴스화할 수 없거나 navigationController에 접근할 수 없음")
+                        return
+                    }
+                    
+                    if let navigationController = selectedViewController as? UINavigationController ?? selectedViewController.navigationController {
+                        self.dismiss(animated: true) {
+                            let trip = TripModel(id: ref!.documentID,
+                                                 title: title,
+                                                 startDate: startDate,
+                                                 endDate: endDate,
+                                                 location: location)
+                            
+                            tripNoteVC.trip = trip
+                            navigationController.pushViewController(tripNoteVC, animated: true)
+                        }
+                    } else {
+                        print("navigationController에 접근할 수 없음")
+                    }
+                }
             }
-        } else {
-            print("navigationController에 접근할 수 없음")
         }
     }
 }

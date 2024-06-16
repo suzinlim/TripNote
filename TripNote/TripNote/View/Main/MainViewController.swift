@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var user: User?
+    var trips: [TripModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,19 @@ class MainViewController: UIViewController {
         setupCollectionView()
         setupCollectionViewLayout()
         registerCollectionViewCell()
+        fetchData()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTripAddedNotification), name: Notification.Name("TripAddedNotification"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tripCollectionView.reloadData()
     }
     
     private func getUserInfo() {
         if let currentUser = Auth.auth().currentUser {
-            self.user = currentUser
-            
-            guard let user = self.user else { return }
-            
             let db = Firestore.firestore()
-            let usersRef = db.collection("users").document(user.uid)
+            let usersRef = db.collection("users").document(currentUser.uid)
             
             usersRef.getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -42,6 +46,17 @@ class MainViewController: UIViewController {
                     print("사용자 정보를 가져오는 데 실패했습니다.")
                 }
             }
+        }
+    }
+    
+    @objc private func handleTripAddedNotification() {
+        fetchData()
+    }
+    
+    private func fetchData() {
+        TripDataManager.shared.fetchTrips { [weak self] trips in
+            self?.trips = trips
+            self?.tripCollectionView.reloadData()
         }
     }
     
@@ -77,28 +92,100 @@ class MainViewController: UIViewController {
     private func registerCollectionViewCell() {
         let tripNib = UINib(nibName: "TripCollectionViewCell", bundle: nil)
         tripCollectionView.register(tripNib, forCellWithReuseIdentifier: TripCollectionViewCell.cellIdentifier)
+        
+        let emptyNib = UINib(nibName: "EmptyCollectionViewCell", bundle: nil)
+        tripCollectionView.register(emptyNib, forCellWithReuseIdentifier: EmptyCollectionViewCell.cellIdentifier)
     }
     
     @IBAction func addTripButtonTapped(_ sender: UIButton) {
-        print("여행 추가하기 버튼")
         guard let setTripTitleVC = self.storyboard?.instantiateViewController(withIdentifier: "setTripTitleViewController") as? SetTripTitleViewController else { return }
         self.navigationController?.pushViewController(setTripTitleVC, animated: true)
     }
-    
 }
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        // trips 배열이 비어 있을 경우 1개의 EmptyCollectionViewCell 표시
+        // trips 배열이 비어 있지 않을 경우 trips 배열의 개수만큼 TripCollectionViewCell 표시
+        return trips.isEmpty ? 1 : trips.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripCollectionViewCell.cellIdentifier, for: indexPath) as! TripCollectionViewCell
-        
-        return cell
+        if trips.isEmpty {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmptyCollectionViewCell.cellIdentifier, for: indexPath) as! EmptyCollectionViewCell
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TripCollectionViewCell.cellIdentifier, for: indexPath) as! TripCollectionViewCell
+            
+            let trip = trips[indexPath.item]
+            
+            // 셀의 세부사항 설정 및 수정/삭제 액션 전달
+            cell.configure(with: trip, onEditAction: { [weak self] in
+                guard let editTripNoteVC = self?.storyboard?.instantiateViewController(withIdentifier: "editTripViewController") as? EditTripViewController else { return }
+                editTripNoteVC.trip = trip
+                editTripNoteVC.hidesBottomBarWhenPushed = true
+                self?.navigationController?.pushViewController(editTripNoteVC, animated: true)
+            }, onDeleteAction: { [weak self] in
+                self?.showDeleteAlert(for: indexPath)
+            })
+            return cell
+        }
+    }
+    
+    private func showDeleteAlert(for indexPath: IndexPath) {
+        let alert = UIAlertController(title: "여행 삭제", message: "정말로 삭제하시겠습니까?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { [weak self] _ in
+            self?.deleteTrip(at: indexPath)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func deleteTrip(at indexPath: IndexPath) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            // 삭제할 여행 항목이 유효한지 검사
+            guard indexPath.item < self.trips.count else { return }
+            
+            let tripToDelete = self.trips[indexPath.item]
+            // 비동기 처리로 진행, 삭제 성공했을 때 클로저 호출
+            TripDataManager.shared.deleteTrip(tripID: tripToDelete.id) { error in
+                if let error = error {
+                    print("여행 노트 삭제 실패: \(error.localizedDescription)")
+                } else {
+                    // 성공할 경우 trips 배열에서 해당 여행 제거
+                    self.trips.remove(at: indexPath.item)
+                    
+                    if self.trips.isEmpty {
+                        self.tripCollectionView.reloadData()
+                    } else {
+                        self.tripCollectionView.performBatchUpdates({
+                            self.tripCollectionView.deleteItems(at: [indexPath])
+                        }, completion: { finished in
+                            if !finished {
+                                print("CollectionView 삭제 반영 실패")
+                            }
+                        })
+                    }
+                }
+            }
+        }
     }
 }
 
+// -MARK: UICollectionViewDelegate
+extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let tripNoteVC = storyboard?.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController else { return }
+        // 해당 여행 데이터를 전달하며 TripNote 뷰 컨트롤러로 이동
+        tripNoteVC.trip = trips[indexPath.item]
+        tripNoteVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(tripNoteVC, animated: true)
+    }
+}
+
+// -MARK: UICollectionViewDelegateFlowLayout
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     // 페이징 구현
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

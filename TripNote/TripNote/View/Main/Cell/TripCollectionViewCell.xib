@@ -37,9 +37,6 @@
                         <rect key="frame" x="218" y="5" width="48" height="38"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="more"/>
-                        <connections>
-                            <action selector="moreButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="uIL-an-m6W"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6월 29일 ~ 6월 31일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-ce-cqT">
                         <rect key="frame" x="94.333333333333329" y="322.66666666666669" width="146.66666666666669" height="20.333333333333314"/>
