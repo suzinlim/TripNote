@@ -91,17 +91,17 @@ extension DiaryTableViewCell: UICollectionViewDataSource {
         guard let imageUrls = diary?.imageUrls else {
             return cell
         }
-        
+
         if indexPath.item < imageUrls.count {
             let imageUrl = imageUrls[indexPath.item]
             if let url = URL(string: imageUrl) {
-                cell.imageView.sd_setImage(with: url)
+                cell.imageView.sd_setImage(with: url, placeholderImage: nil, options: [.progressiveLoad])
             }
         }
-        
+
         cell.imageView.contentMode = .scaleAspectFill
         cell.imageView.clipsToBounds = true
-        
+
         return cell
     }
 }

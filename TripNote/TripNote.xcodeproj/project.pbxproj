@@ -55,6 +55,7 @@
 		0A8549D12C1F2D03008D81DD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8549D02C1F2D03008D81DD /* MapViewController.swift */; };
 		0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */; };
 		0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */; };
+		0A8CD80E2C1F73D10020BD85 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8CD80D2C1F73D10020BD85 /* LoadingViewController.swift */; };
 		0AAB36F32C1ED75100D6A599 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 0AAB36F22C1ED75100D6A599 /* BSImagePicker */; };
 		0AAB36F62C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAB36F42C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift */; };
 		0AAB36F72C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAB36F52C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib */; };
@@ -128,6 +129,7 @@
 		0A8549D02C1F2D03008D81DD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripTitleViewController.swift; sourceTree = "<group>"; };
 		0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripDateViewController.swift; sourceTree = "<group>"; };
+		0A8CD80D2C1F73D10020BD85 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		0AAB36F42C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0AAB36F52C1EDA2E00D6A599 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		0AAB36F82C1EE6EA00D6A599 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				0A4E575E2C15DDCE00D24D7E /* Cell */,
 				0A4E57632C15E65400D24D7E /* DiaryViewController.swift */,
 				0A28A5172C175A6A00E62668 /* AddDiaryViewController.swift */,
+				0A8CD80D2C1F73D10020BD85 /* LoadingViewController.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				0A37583B2C10BB9E002808A0 /* AppDelegate.swift in Sources */,
 				0A745F422C19C78100DAE442 /* SetTripLocationViewController.swift in Sources */,
 				0A4715752C1D83F9007AC625 /* EditTripViewController.swift in Sources */,
+				0A8CD80E2C1F73D10020BD85 /* LoadingViewController.swift in Sources */,
 				0A4E57552C15CF6A00D24D7E /* TripHeaderView.swift in Sources */,
 				0A745F402C19A64E00DAE442 /* TripDataManager.swift in Sources */,
 				0A3758822C10CF41002808A0 /* TripCollectionViewCell.swift in Sources */,

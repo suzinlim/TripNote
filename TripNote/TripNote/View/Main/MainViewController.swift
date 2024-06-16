@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class MainViewController: UIViewController {
+class MainViewController: LoadingViewController {
     @IBOutlet weak var tripCollectionView: UICollectionView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserInfo()
+        setupUser()
         setupCollectionView()
         setupCollectionViewLayout()
         registerCollectionViewCell()
@@ -31,21 +31,10 @@ class MainViewController: UIViewController {
         tripCollectionView.reloadData()
     }
     
-    private func getUserInfo() {
-        if let currentUser = Auth.auth().currentUser {
-            let db = Firestore.firestore()
-            let usersRef = db.collection("users").document(currentUser.uid)
-            
-            usersRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    if let nickname = document.data()? ["nickname"] as? String {
-                        print("닉네임: \(nickname)")
-                        self.nickNameLabel.text = "\(nickname)님의 여행 노트"
-                    }
-                } else {
-                    print("사용자 정보를 가져오는 데 실패했습니다.")
-                }
-            }
+    private func setupUser() {
+        startLoading()
+        getUserInfo {
+            self.stopLoading()
         }
     }
     
@@ -54,11 +43,44 @@ class MainViewController: UIViewController {
     }
     
     private func fetchData() {
+        startLoading() // 데이터 로딩 시작
         TripDataManager.shared.fetchTrips { [weak self] trips in
             self?.trips = trips
             self?.tripCollectionView.reloadData()
         }
+        stopLoading() // 데이터 로딩 완료
     }
+
+    private func getUserInfo(completion: @escaping () -> Void) {
+        if let currentUser = Auth.auth().currentUser {
+            let db = Firestore.firestore()
+            let usersRef = db.collection("users").document(currentUser.uid)
+            
+            usersRef.getDocument { [weak self] (document, error) in
+                guard let self = self else { return }
+                
+                if let document = document, document.exists {
+                    if let nickname = document.data()?["nickname"] as? String {
+                        print("닉네임: \(nickname)")
+                        DispatchQueue.main.async {
+                            self.nickNameLabel.text = "\(nickname)님의 여행 노트"
+                            completion() // 사용자 정보 가져오기 성공
+                        }
+                    }
+                } else {
+                    print("사용자 정보를 가져오는 데 실패했습니다.")
+                    DispatchQueue.main.async {
+                        completion() // 사용자 정보 가져오기 실패
+                    }
+                }
+            }
+        } else {
+            DispatchQueue.main.async {
+                completion() // 사용자 정보가 없는 경우
+            }
+        }
+    }
+
     
     private func setupCollectionView() {
         tripCollectionView.delegate = self

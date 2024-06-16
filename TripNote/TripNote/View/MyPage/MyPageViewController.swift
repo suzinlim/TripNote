@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: LoadingViewController {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
@@ -20,6 +20,7 @@ class MyPageViewController: UIViewController {
     }
     
     private func getUserInfo() {
+        startLoading()
         guard let currentUser = Auth.auth().currentUser else {
             print("사용자가 로그인되어 있지 않습니다.")
             return
@@ -41,6 +42,7 @@ class MyPageViewController: UIViewController {
                     print("이메일: \(email)")
                     self.nickNameLabel.text = nickname
                     self.emailLabel.text = email
+                    do { self.stopLoading() }
                 } else {
                     print("사용자 데이터에 닉네임 또는 이메일이 존재하지 않음")
                 }

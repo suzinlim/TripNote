@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
-class DiaryViewController: UIViewController {
+class DiaryViewController: LoadingViewController {
     @IBOutlet weak var diaryTableView: UITableView!
     @IBOutlet weak var diaryButton: UIButton!
     
@@ -46,9 +46,19 @@ class DiaryViewController: UIViewController {
     }
     
     private func fetchData() {
+        startLoading() // 로딩 시작
+        
         let diariesCollection = firestore.collection("diaries")
         
-        diaryListener = diariesCollection.addSnapshotListener { querySnapshot, error in
+        diaryListener = diariesCollection.addSnapshotListener { [weak self] querySnapshot, error in
+            guard let self = self else { return }
+            defer { self.stopLoading() } // 로딩 종료
+            
+            if let error = error {
+                print("Error fetching diaries: \(error.localizedDescription)")
+                return
+            }
+            
             guard let documents = querySnapshot?.documents else { return }
             
             self.diaries = documents.compactMap { document in
