@@ -174,7 +174,7 @@ class AddDiaryViewController: UIViewController {
     }
 }
 
-// -MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension AddDiaryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return selectedImages.count
@@ -189,7 +189,7 @@ extension AddDiaryViewController: UICollectionViewDataSource {
     }
 }
 
-// -MARK: UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension AddDiaryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let paddingSpace: CGFloat = 10
@@ -200,7 +200,7 @@ extension AddDiaryViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// -MARK: UITextViewDelegate
+// MARK: - UITextViewDelegate
 extension AddDiaryViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {

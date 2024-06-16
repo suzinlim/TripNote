@@ -135,7 +135,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-// -MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         checkCompletedButtonActivation()

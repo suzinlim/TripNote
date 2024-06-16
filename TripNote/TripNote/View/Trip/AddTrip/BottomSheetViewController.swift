@@ -255,6 +255,7 @@ class BottomSheetViewController: UIViewController {
 }
 
 extension BottomSheetViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    // - MARK: - UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colors.count
     }
@@ -267,7 +268,7 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
         return cell
     }
     
-    // MARK: UICollectionViewDelegateFlowLayout
+    // MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 선택된 셀의 크기 증가
         if let selectedIndexPath = selectedIndexPath, selectedIndexPath == indexPath {
@@ -278,6 +279,7 @@ extension BottomSheetViewController: UICollectionViewDataSource, UICollectionVie
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension BottomSheetViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {

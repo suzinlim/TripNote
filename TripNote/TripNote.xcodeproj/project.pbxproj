@@ -49,6 +49,10 @@
 		0A745F452C19DCBE00DAE442 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F442C19DCBE00DAE442 /* StartViewController.swift */; };
 		0A745F472C19DCC200DAE442 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F462C19DCC200DAE442 /* LoginViewController.swift */; };
 		0A745F492C19DCCA00DAE442 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A745F482C19DCCA00DAE442 /* SignUpViewController.swift */; };
+		0A8549CB2C1F1E01008D81DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8549CA2C1F1E01008D81DD /* SearchViewController.swift */; };
+		0A8549CE2C1F27BB008D81DD /* SelectLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8549CD2C1F27BB008D81DD /* SelectLocationTableViewCell.xib */; };
+		0A8549CF2C1F27BB008D81DD /* SelectLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8549CC2C1F27BB008D81DD /* SelectLocationTableViewCell.swift */; };
+		0A8549D12C1F2D03008D81DD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8549D02C1F2D03008D81DD /* MapViewController.swift */; };
 		0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */; };
 		0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */; };
 		0AAB36F32C1ED75100D6A599 /* BSImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 0AAB36F22C1ED75100D6A599 /* BSImagePicker */; };
@@ -118,6 +122,10 @@
 		0A745F442C19DCBE00DAE442 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		0A745F462C19DCC200DAE442 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A745F482C19DCCA00DAE442 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0A8549CA2C1F1E01008D81DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0A8549CC2C1F27BB008D81DD /* SelectLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationTableViewCell.swift; sourceTree = "<group>"; };
+		0A8549CD2C1F27BB008D81DD /* SelectLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectLocationTableViewCell.xib; sourceTree = "<group>"; };
+		0A8549D02C1F2D03008D81DD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripTitleViewController.swift; sourceTree = "<group>"; };
 		0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTripDateViewController.swift; sourceTree = "<group>"; };
 		0AAB36F42C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -182,14 +190,8 @@
 		0A0811452C130E7100F6EEFF /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				0A37587E2C10CF30002808A0 /* Cell */,
-				0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */,
-				0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */,
-				0A745F412C19C78100DAE442 /* SetTripLocationViewController.swift */,
-				0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */,
-				0A4E574A2C15AE7900D24D7E /* TripNoteViewController.swift */,
-				0A4E57542C15CF6A00D24D7E /* TripHeaderView.swift */,
-				0A72C8872C1C33EE0030F69C /* AddScheduleViewController.swift */,
+				0A8549C92C1F1DC9008D81DD /* AddSchedule */,
+				0A8549C82C1F1DBF008D81DD /* AddTrip */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -266,6 +268,8 @@
 				0A4E57512C15B70200D24D7E /* TripItemTableViewCell.xib */,
 				0A5E45F82C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift */,
 				0A5E45F92C18B70000EF8767 /* NotEnteredTripItemTableViewCell.xib */,
+				0A8549CC2C1F27BB008D81DD /* SelectLocationTableViewCell.swift */,
+				0A8549CD2C1F27BB008D81DD /* SelectLocationTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -336,6 +340,30 @@
 				0A745F482C19DCCA00DAE442 /* SignUpViewController.swift */,
 			);
 			path = Start;
+			sourceTree = "<group>";
+		};
+		0A8549C82C1F1DBF008D81DD /* AddTrip */ = {
+			isa = PBXGroup;
+			children = (
+				0A88975F2C1465A80057EA0F /* SetTripTitleViewController.swift */,
+				0A8897612C1465B30057EA0F /* SetTripDateViewController.swift */,
+				0A745F412C19C78100DAE442 /* SetTripLocationViewController.swift */,
+				0A5E45FC2C18BBF600EF8767 /* BottomSheetViewController.swift */,
+			);
+			path = AddTrip;
+			sourceTree = "<group>";
+		};
+		0A8549C92C1F1DC9008D81DD /* AddSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				0A37587E2C10CF30002808A0 /* Cell */,
+				0A4E574A2C15AE7900D24D7E /* TripNoteViewController.swift */,
+				0A4E57542C15CF6A00D24D7E /* TripHeaderView.swift */,
+				0A72C8872C1C33EE0030F69C /* AddScheduleViewController.swift */,
+				0A8549CA2C1F1E01008D81DD /* SearchViewController.swift */,
+				0A8549D02C1F2D03008D81DD /* MapViewController.swift */,
+			);
+			path = AddSchedule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +495,7 @@
 				0A4E57532C15B70200D24D7E /* TripItemTableViewCell.xib in Resources */,
 				0A3758472C10BB9F002808A0 /* Base in Resources */,
 				0A3758422C10BB9E002808A0 /* Base in Resources */,
+				0A8549CE2C1F27BB008D81DD /* SelectLocationTableViewCell.xib in Resources */,
 				0A4E576C2C15EA9F00D24D7E /* DiaryTableViewCell.xib in Resources */,
 				0A5E45FA2C18B70000EF8767 /* NotEnteredTripItemTableViewCell.xib in Resources */,
 			);
@@ -493,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8549CB2C1F1E01008D81DD /* SearchViewController.swift in Sources */,
 				0A8897602C1465A80057EA0F /* SetTripTitleViewController.swift in Sources */,
 				0A4E576B2C15EA9F00D24D7E /* DiaryTableViewCell.swift in Sources */,
 				0A4715772C1DB868007AC625 /* ScheduleModel.swift in Sources */,
@@ -507,6 +537,7 @@
 				0A72C8882C1C33EE0030F69C /* AddScheduleViewController.swift in Sources */,
 				0A4E574B2C15AE7900D24D7E /* TripNoteViewController.swift in Sources */,
 				0AAB36F92C1EE6EA00D6A599 /* DiaryModel.swift in Sources */,
+				0A8549D12C1F2D03008D81DD /* MapViewController.swift in Sources */,
 				0A8897622C1465B30057EA0F /* SetTripDateViewController.swift in Sources */,
 				0A08113F2C130A4200F6EEFF /* UILabel+Extension.swift in Sources */,
 				0A5E45FB2C18B70000EF8767 /* NotEnteredTripItemTableViewCell.swift in Sources */,
@@ -520,6 +551,7 @@
 				0A37583D2C10BB9E002808A0 /* SceneDelegate.swift in Sources */,
 				0A28A5182C175A6A00E62668 /* AddDiaryViewController.swift in Sources */,
 				0AAB36F62C1EDA2E00D6A599 /* PhotoCollectionViewCell.swift in Sources */,
+				0A8549CF2C1F27BB008D81DD /* SelectLocationTableViewCell.swift in Sources */,
 				0A4715802C1DE9FF007AC625 /* EmptyCollectionViewCell.swift in Sources */,
 				0A3758792C10CD0A002808A0 /* MainViewController.swift in Sources */,
 			);

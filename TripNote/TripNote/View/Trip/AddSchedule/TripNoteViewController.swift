@@ -105,12 +105,13 @@ class TripNoteViewController: UIViewController, NotEnteredTripItemTableViewCellD
                 self.schedules = documents.compactMap { queryDocumentSnapshot -> ScheduleModel? in
                     let data = queryDocumentSnapshot.data()
                     let place = data["place"] as? String
+                    let placeAddress = data["placeAddress"] as? String
                     let memo = data["memo"] as? String
                     let timestamp = data["date"] as? Timestamp
                     let date = timestamp?.dateValue()
                     let createdAt = data["createdAt"] as? Timestamp
                 
-                    return ScheduleModel(id: queryDocumentSnapshot.documentID, date: date!, place: place!, memo: memo!)
+                    return ScheduleModel(id: queryDocumentSnapshot.documentID, date: date!, place: place!, placeAddress: placeAddress!, memo: memo!)
                 }
                 self.tableView.reloadData()
             }
@@ -149,7 +150,7 @@ class TripNoteViewController: UIViewController, NotEnteredTripItemTableViewCellD
     }
 }
 
-// -MARK: UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension TripNoteViewController: UITableViewDataSource {
     
     // 섹션 수
@@ -310,7 +311,7 @@ extension TripNoteViewController: UITableViewDataSource {
     }
 }
 
-// -MARK: UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension TripNoteViewController: UITableViewDelegate {
     func addScheduleTapped(cell: NotEnteredTripItemTableViewCell, tripId: String) {
         if let indexPath = tableView.indexPath(for: cell) {

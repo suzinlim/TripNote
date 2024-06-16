@@ -103,6 +103,7 @@ class MainViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // trips 배열이 비어 있을 경우 1개의 EmptyCollectionViewCell 표시
@@ -174,7 +175,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-// -MARK: UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let tripNoteVC = storyboard?.instantiateViewController(withIdentifier: "tripNoteViewController") as? TripNoteViewController else { return }
@@ -185,7 +186,7 @@ extension MainViewController: UICollectionViewDelegate {
     }
 }
 
-// -MARK: UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     // 페이징 구현
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

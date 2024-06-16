@@ -75,6 +75,7 @@ extension DiaryViewController: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
 extension DiaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return diaries.count

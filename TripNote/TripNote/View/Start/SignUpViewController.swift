@@ -191,7 +191,7 @@ class SignUpViewController: UIViewController {
     }
 }
 
-// -MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {

@@ -139,7 +139,7 @@ class EditTripViewController: UIViewController {
     }
 }
 
-// -MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension EditTripViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         checkCompletedButtonActivation()

@@ -14,6 +14,9 @@ class AddScheduleViewController: UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var completedButton: UIButton!
     
+    var placeName: String?
+    var placeAddress: String?
+    
     let textViewPlaceHolder = "메모를 입력하세요"
     
     var trip: TripModel?
@@ -34,6 +37,18 @@ class AddScheduleViewController: UIViewController {
         if let editingSchedule = editingSchedule {
             fetchData()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSelectedPlaceNotification(_:)), name: .selectedPlaceNotification, object: nil)
+    }
+    
+    @objc private func handleSelectedPlaceNotification(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let placeName = userInfo["placeName"] as? String,
+              let placeAddress = userInfo["placeAddress"] as? String
+        else { return }
+
+        locationTextField.text = placeName
+        self.placeAddress = placeAddress
+        checkCompletedButtonActivation()
     }
     
     private func setTextViewDelegate() {
@@ -65,6 +80,7 @@ class AddScheduleViewController: UIViewController {
         memoTextView.layer.cornerRadius = 5
         
         // 완료 Button
+        completedButton.isUserInteractionEnabled = false
         completedButton.layer.cornerRadius = 10
     }
     
@@ -75,11 +91,12 @@ class AddScheduleViewController: UIViewController {
     @IBAction func completedButtonTapped(_ sender: UIButton) {
         let location = locationTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let memo = memoTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        guard !location.isEmpty, !memo.isEmpty, let selectedDate = selectedDate else { return }
+
+        guard !location.isEmpty, !memo.isEmpty,
+                let selectedDate = selectedDate, let placeAddress = placeAddress else { return }
         
         // Schedule 객체 생성
-        var newSchedule = ScheduleModel(date: selectedDate, place: location, memo: memo)
+        let newSchedule = ScheduleModel(date: selectedDate, place: location, placeAddress: placeAddress, memo: memo)
         
         // Firebase에 데이터 저장
         saveToFirebase(schedule: newSchedule)
@@ -125,6 +142,10 @@ class AddScheduleViewController: UIViewController {
             "createdAt": FieldValue.serverTimestamp()
         ]
         
+        if let placeAddress = placeAddress {
+            data["placeAddress"] = placeAddress
+        }
+        
         scheduleRef.setData(data) { [weak self] error in
             guard let self = self else { return }
             
@@ -145,7 +166,7 @@ class AddScheduleViewController: UIViewController {
     }
 }
 
-// -MARK: UITextViewDelegate
+// MARK: - UITextViewDelegate
 extension AddScheduleViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {
@@ -178,8 +199,14 @@ extension AddScheduleViewController: UITextViewDelegate {
     }
 }
 
-// -MARK: UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension AddScheduleViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == locationTextField {
+            performSegue(withIdentifier: "showSearch", sender: self)
+        }
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         DispatchQueue.main.async {
             self.checkCompletedButtonActivation()

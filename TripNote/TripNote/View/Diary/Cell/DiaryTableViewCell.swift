@@ -78,7 +78,7 @@ class DiaryTableViewCell: UITableViewCell {
      }
  }
 
-// -MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension DiaryTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -106,7 +106,7 @@ extension DiaryTableViewCell: UICollectionViewDataSource {
     }
 }
 
-// -MARK: UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension DiaryTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSize = collectionView.frame.height

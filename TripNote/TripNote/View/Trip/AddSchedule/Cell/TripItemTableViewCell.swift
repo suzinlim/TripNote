@@ -40,6 +40,7 @@ class TripItemTableViewCell: UITableViewCell {
     func configure(with schedule: ScheduleModel, at indexPath: IndexPath) {
         numberLabel.text = String(indexPath.row + 1)
         placeLabel.text = schedule.place
+        placeDetailLabel.text = schedule.placeAddress
         memoLabel.text = schedule.memo
     }
 }
